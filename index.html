@@ -292,6 +292,13 @@
     border-color: rgba(201,162,39,0.5);
   }
   .stop.villa h3 { color: var(--accent); }
+
+  /* כרטיס החג */
+  .stop.holiday .card {
+    background: linear-gradient(180deg, #fdeecb, var(--card));
+    border-color: rgba(201,162,39,0.65);
+  }
+  .stop.holiday h3 { color: var(--accent); }
   .addr {
     margin-top: 14px; padding-top: 14px;
     border-top: 1px solid var(--line);
@@ -544,20 +551,23 @@
       </div>
     </section>
 
-    <!-- 11 בספטמבר -->
-    <section class="stop left reveal">
+    <!-- 11 בספטמבר — ערב ראש השנה -->
+    <section class="stop holiday major left reveal">
       <div class="card">
         <span class="progress"></span>
-        <p class="day"><span>11 בספט׳</span><span class="dow">יום שישי</span></p>
-        <h3>היום האחרון בווילה</h3>
-        <p class="sub">ליהנות עד הסוף ולהתארגן לחזרה לפריז בבוקר.</p>
+        <p class="day"><span>11 בספט׳</span><span class="dow">יום שישי · ערב ראש השנה</span></p>
+        <h3>היום האחרון בווילה · ערב ראש השנה 🍯</h3>
+        <p class="sub">היום האחרון בווילה — וגם ליל החג. חוגגים יחד סעודת ראש השנה לפני החזרה לפריז מחר בבוקר.</p>
         <ul class="tasks">
-          <li><label><input type="checkbox" id="t-0911-1" /><span>לחזור פעם אחרונה למקום האהוב</span></label></li>
-          <li><label><input type="checkbox" id="t-0911-2" /><span>להתחיל לארוז</span></label></li>
-          <li><label><input type="checkbox" id="t-0911-3" /><span>לתכנן יציאה מוקדמת מחר</span></label></li>
+          <li><label><input type="checkbox" id="t-0911-1" /><span><span class="hint">קניות לסעודת החג</span></span></label></li>
+          <li><label><input type="checkbox" id="t-0911-2" /><span>להכין ארוחת ערב חגיגית</span></label></li>
+          <li><label><input type="checkbox" id="t-0911-3" /><span>סימני החג (תפוח בדבש, רימון, דגים...)</span></label></li>
+          <li><label><input type="checkbox" id="t-0911-4" /><span>לחזור פעם אחרונה למקום האהוב</span></label></li>
+          <li><label><input type="checkbox" id="t-0911-5" /><span>להתחיל לארוז ולתכנן יציאה מוקדמת מחר</span></label></li>
         </ul>
+        <span class="tag gold">🍯 שנה טובה ומתוקה</span>
       </div>
-      <div class="node"></div>
+      <div class="node" data-icon="🍯"></div>
     </section>
 
     <div class="leg reveal"><span>🚗  מבורגונדי לפריז · נסיעת בוקר · החזרת המכוניות</span></div>
