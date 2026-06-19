@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Azulays Trip · France · Sep 2026</title>
+<meta name="description" content="The plan for the Azulays family trip to France, 4–14 September 2026 — Paris, then a villa in Burgundy, then Paris again." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ground: #ECE6D6;
+    --ground-2: #E3DCC8;
+    --text: #2B2724;
+    --muted: #6B6256;
+    --accent: #7A1F2B;     /* burgundy wine */
+    --accent-2: #C9A227;   /* vineyard gold */
+    --road: #38332E;       /* asphalt */
+    --sky: #4A6C8C;        /* french blue */
+    --card: #F6F2E8;
+    --line: #D6CDB8;
+    --shadow: 28px 28px 60px rgba(43, 39, 36, 0.10);
+    --road-w: 60px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--text);
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    background-image:
+      radial-gradient(circle at 18% 12%, rgba(122, 31, 43, 0.05), transparent 40%),
+      radial-gradient(circle at 85% 70%, rgba(201, 162, 39, 0.06), transparent 45%);
+  }
+
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- Typography ---------- */
+  h1, h2, h3 { font-family: "Bricolage Grotesque", sans-serif; line-height: 1.02; margin: 0; }
+  .mono { font-family: "Space Mono", monospace; }
+
+  .eyebrow {
+    font-family: "Space Mono", monospace;
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0;
+  }
+
+  /* ---------- Hero ---------- */
+  header.hero {
+    position: relative;
+    padding: 64px 0 0;
+    text-align: center;
+    overflow: hidden;
+  }
+  .hero-canvas-wrap { position: relative; }
+  #flights { display: block; width: 100%; height: auto; }
+
+  .hero-title {
+    font-size: clamp(48px, 11vw, 132px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin: 14px 0 0;
+  }
+  .hero-title .the { display: block; font-size: 0.34em; font-weight: 600; letter-spacing: 0.12em; color: var(--muted); text-transform: uppercase; }
+  .hero-title .accent { color: var(--accent); }
+
+  .hero-dates {
+    font-family: "Space Mono", monospace;
+    font-size: clamp(15px, 2.4vw, 21px);
+    letter-spacing: 0.16em;
+    color: var(--text);
+    margin: 18px 0 0;
+  }
+  .hero-dates b { color: var(--accent); font-weight: 700; }
+
+  /* quick facts */
+  .facts {
+    display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 14px; margin: 38px 0 8px; padding: 0; list-style: none;
+  }
+  .facts li {
+    display: flex; align-items: baseline; gap: 9px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    padding: 9px 18px;
+    box-shadow: 0 2px 0 rgba(43,39,36,0.04);
+  }
+  .facts .n { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 22px; color: var(--accent); }
+  .facts .lbl { font-size: 13px; color: var(--muted); letter-spacing: 0.02em; }
+
+  /* ---------- Route / road ---------- */
+  .route { position: relative; padding: 36px 0 60px; }
+
+  /* the asphalt road down the middle */
+  .route::before {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 50%;
+    width: var(--road-w);
+    transform: translateX(-50%);
+    background:
+      linear-gradient(90deg, rgba(0,0,0,0.18) 0 3px, transparent 3px) 0 0/100% 100%,
+      linear-gradient(-90deg, rgba(0,0,0,0.18) 0 3px, transparent 3px) 100% 0/100% 100%,
+      var(--road);
+    border-radius: 4px;
+  }
+  /* dashed centre line */
+  .route::after {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 50%;
+    width: 4px;
+    transform: translateX(-50%);
+    background: repeating-linear-gradient(
+      to bottom,
+      var(--accent-2) 0 22px,
+      transparent 22px 44px
+    );
+    opacity: 0.92;
+    border-radius: 2px;
+  }
+
+  /* a stop along the road */
+  .stop {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr var(--road-w) 1fr;
+    align-items: center;
+    margin: 30px 0;
+  }
+
+  .node {
+    grid-column: 2;
+    justify-self: center;
+    z-index: 3;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: var(--ground);
+    border: 4px solid var(--accent);
+    box-shadow: 0 0 0 5px var(--ground), 0 6px 16px rgba(122,31,43,0.30);
+    position: relative;
+  }
+  .stop.major .node {
+    width: 40px; height: 40px;
+    background: var(--accent);
+    border-color: var(--accent-2);
+  }
+  .stop.major .node::after {
+    content: attr(data-icon);
+    position: absolute; inset: 0;
+    display: grid; place-items: center;
+    font-size: 17px;
+  }
+
+  /* card sides */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 22px 24px;
+    box-shadow: var(--shadow);
+    position: relative;
+    z-index: 2;
+  }
+  .stop.left .card  { grid-column: 1; margin-right: 14px; }
+  .stop.right .card { grid-column: 3; margin-left: 14px; }
+
+  /* little connector from card to road node */
+  .stop.left .card::after, .stop.right .card::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 16px; height: 2px;
+    background: var(--line);
+  }
+  .stop.left .card::after  { right: -16px; }
+  .stop.right .card::after { left: -16px; }
+
+  .card .day {
+    font-family: "Space Mono", monospace;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: flex; align-items: center; gap: 10px;
+    margin: 0 0 6px;
+  }
+  .card .day .dow { color: var(--muted); }
+  .card h3 { font-size: 25px; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 8px; }
+  .card p  { margin: 0 0 0; color: var(--text); }
+  .card p + p { margin-top: 10px; }
+  .card .sub { color: var(--muted); font-size: 15px; }
+
+  .tag {
+    display: inline-block;
+    font-family: "Space Mono", monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 100px;
+    margin: 12px 6px 0 0;
+  }
+  .tag.gold  { background: rgba(201,162,39,0.18); color: #8a6d10; border: 1px solid rgba(201,162,39,0.45); }
+  .tag.wine  { background: rgba(122,31,43,0.10); color: var(--accent); border: 1px solid rgba(122,31,43,0.30); }
+  .tag.blue  { background: rgba(74,108,140,0.12); color: var(--sky); border: 1px solid rgba(74,108,140,0.35); }
+
+  /* boarding-pass style flight rows */
+  .flight {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 10px;
+    font-family: "Space Mono", monospace;
+    background: var(--ground);
+    border: 1px dashed var(--line);
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-top: 14px;
+  }
+  .flight + .flight { margin-top: 10px; }
+  .flight .code { grid-column: 1 / -1; font-size: 11px; letter-spacing: 0.14em; color: var(--accent); text-transform: uppercase; }
+  .flight .pt { text-align: center; }
+  .flight .pt .ap { font-weight: 700; font-size: 18px; }
+  .flight .pt .tm { font-size: 13px; color: var(--text); }
+  .flight .pt .dt { font-size: 11px; color: var(--muted); }
+  .flight .path { color: var(--sky); font-size: 18px; text-align: center; }
+
+  /* villa highlight card */
+  .stop.villa .card {
+    background: linear-gradient(180deg, #fff8ec, var(--card));
+    border-color: rgba(201,162,39,0.5);
+  }
+  .stop.villa h3 { color: var(--accent); }
+  .villa-stay {
+    font-family: "Space Mono", monospace;
+    font-size: 13px; color: var(--muted);
+    margin-top: 4px;
+  }
+  .addr {
+    margin-top: 14px; padding-top: 14px;
+    border-top: 1px solid var(--line);
+    font-size: 15px;
+  }
+  .addr a { color: var(--accent); font-weight: 600; text-decoration: none; border-bottom: 1.5px solid rgba(122,31,43,0.3); }
+  .addr a:hover { border-bottom-color: var(--accent); }
+
+  .soon {
+    margin-top: 12px;
+    font-size: 13.5px;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* drive marker (between stops, on the road) */
+  .leg {
+    position: relative;
+    text-align: center;
+    margin: 6px 0;
+    z-index: 3;
+  }
+  .leg span {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    padding: 7px 16px;
+    border-radius: 100px;
+    box-shadow: 0 6px 16px rgba(122,31,43,0.28);
+  }
+
+  /* section divider labels on the road */
+  .chapter {
+    position: relative;
+    text-align: center;
+    margin: 8px 0 2px;
+    z-index: 3;
+  }
+  .chapter span {
+    display: inline-block;
+    background: var(--ground);
+    padding: 4px 16px;
+    font-family: "Space Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-2);
+    border: 1px solid rgba(201,162,39,0.5);
+    border-radius: 100px;
+    color: #8a6d10;
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    text-align: center;
+    padding: 48px 24px 64px;
+    border-top: 1px solid var(--line);
+    margin-top: 20px;
+  }
+  footer .eyebrow { color: var(--muted); }
+  footer p { color: var(--muted); max-width: 520px; margin: 12px auto 0; font-size: 15px; }
+  footer .sig { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 22px; color: var(--accent); margin-top: 18px; }
+
+  /* ---------- Entrance animation ---------- */
+  .reveal { opacity: 0; transform: translateY(18px); }
+  .reveal.in { opacity: 1; transform: none; transition: opacity 0.7s ease, transform 0.7s cubic-bezier(.2,.7,.2,1); }
+
+  /* ---------- Mobile ---------- */
+  @media (max-width: 720px) {
+    body { font-size: 16px; }
+    :root { --road-w: 40px; }
+    /* one shared centre axis at 20px (centre of the 40px road column) */
+    .route::before { left: 0; transform: none; }
+    .route::after  { left: 20px; }      /* keeps translateX(-50%) → centred at 20px */
+    .stop {
+      grid-template-columns: var(--road-w) 1fr;
+      column-gap: 0;
+      align-items: start;
+    }
+    .node { grid-column: 1; justify-self: center; margin-top: 26px; }
+    .stop.left .card, .stop.right .card {
+      grid-column: 2;
+      margin: 0 0 0 18px;
+    }
+    .stop.left .card::after, .stop.right .card::after {
+      left: -18px; right: auto; top: 34px;
+    }
+    .leg, .chapter { text-align: left; padding-left: 8px; }
+    .facts { gap: 10px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal, .reveal.in { opacity: 1; transform: none; transition: none; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-canvas-wrap">
+        <canvas id="flights" width="1040" height="240" aria-hidden="true"></canvas>
+      </div>
+      <p class="eyebrow">The plan · France 2026</p>
+      <h1 class="hero-title"><span class="the">The</span> <span class="accent">Azulays</span> Trip</h1>
+      <p class="hero-dates"><b>04 SEP</b> &rarr; <b>14 SEP</b> · 2026 · 10 nights</p>
+
+      <ul class="facts">
+        <li><span class="n">2</span><span class="lbl">flights converging</span></li>
+        <li><span class="n">2</span><span class="lbl">rental cars</span></li>
+        <li><span class="n">1</span><span class="lbl">villa in Burgundy</span></li>
+        <li><span class="n">3</span><span class="lbl">nights in Paris</span></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="wrap route">
+
+    <div class="chapter reveal"><span>Paris · arrival</span></div>
+
+    <!-- Sep 4 — TLV group -->
+    <section class="stop major left reveal" data-icon="✈">
+      <div class="card">
+        <p class="day"><span>Sep 4</span><span class="dow">Friday</span></p>
+        <h3>Tel Aviv lands in Paris</h3>
+        <p class="sub">The Tel Aviv group touches down first and checks into the Paris hotel — the night here is the buffer that lets both groups start the drive together.</p>
+        <div class="flight">
+          <span class="code">El Al · LY319</span>
+          <span class="pt"><span class="ap">TLV</span><span class="tm">05:50</span><span class="dt">Ben Gurion · T3</span></span>
+          <span class="path">✈ &rarr;</span>
+          <span class="pt"><span class="ap">CDG</span><span class="tm">09:40</span><span class="dt">Paris · T2B</span></span>
+        </div>
+        <span class="tag wine">Night 1 · Paris</span>
+      </div>
+      <div class="node" data-icon="✈"></div>
+    </section>
+
+    <!-- Sep 5 — ORD group + cars -->
+    <section class="stop major right reveal" data-icon="✈">
+      <div class="node" data-icon="✈"></div>
+      <div class="card">
+        <p class="day"><span>Sep 5</span><span class="dow">Saturday</span></p>
+        <h3>Chicago lands — then we drive</h3>
+        <p class="sub">The Chicago group arrives in the morning. Everyone meets at the airport, picks up the two rental cars, and we point them south toward Burgundy.</p>
+        <div class="flight">
+          <span class="code">Air France · AF137 · A350-900</span>
+          <span class="pt"><span class="ap">ORD</span><span class="tm">17:10</span><span class="dt">Sep 4 · O'Hare T5</span></span>
+          <span class="path">✈ &rarr;</span>
+          <span class="pt"><span class="ap">CDG</span><span class="tm">08:15</span><span class="dt">Sep 5 · T2E</span></span>
+        </div>
+        <span class="tag blue">Pick up 2 cars</span>
+        <span class="tag wine">Drive south</span>
+      </div>
+    </section>
+
+    <div class="leg reveal"><span>🚗  Paris &rarr; Burgundy · ~300 km · ~3h 30m</span></div>
+
+    <div class="chapter reveal"><span>The villa · Burgundy</span></div>
+
+    <!-- Villa stay -->
+    <section class="stop villa major left reveal" data-icon="🏡">
+      <div class="card">
+        <p class="day"><span>Sep 5 &rarr; 12</span><span class="dow">the heart of the trip</span></p>
+        <h3>The Villa</h3>
+        <p class="villa-stay">7 nights · Saint-Léger-du-Bois</p>
+        <p class="sub">Our home base in the Burgundy countryside. Most of the trip happens from here — day trips, vineyards, and slow mornings. Details get filled in as we plan them.</p>
+        <div class="addr">
+          📍 <a href="https://maps.google.com/?q=11+Route+de+Bouton%2C+71360+Saint-L%C3%A9ger-du-Bois%2C+France&ftid=0x47f2418e09e820ef:0x6df53d6575e9eae0" target="_blank" rel="noopener">11 Route de Bouton, 71360 Saint-Léger-du-Bois</a>
+        </div>
+        <p class="soon">More day-by-day plans coming soon →</p>
+      </div>
+      <div class="node" data-icon="🏡"></div>
+    </section>
+
+    <div class="leg reveal"><span>🚗  Burgundy &rarr; Paris · morning drive · return cars</span></div>
+
+    <div class="chapter reveal"><span>Paris · the send-off</span></div>
+
+    <!-- Sep 12 back to Paris -->
+    <section class="stop right reveal">
+      <div class="node"></div>
+      <div class="card">
+        <p class="day"><span>Sep 12</span><span class="dow">Friday</span></p>
+        <h3>Back to Paris</h3>
+        <p class="sub">Drive back up in the morning and return the cars. The last stretch is all Paris — three nights to wind down before everyone flies home.</p>
+        <span class="tag wine">Nights 8–10 · Paris</span>
+      </div>
+    </section>
+
+    <!-- Sep 12-14 Paris days -->
+    <section class="stop left reveal">
+      <div class="card">
+        <p class="day"><span>Sep 12 &rarr; 14</span><span class="dow">Paris</span></p>
+        <h3>City days</h3>
+        <p class="sub">Open in Paris until the flights out. Plans to be added.</p>
+        <p class="soon">More to come →</p>
+      </div>
+      <div class="node"></div>
+    </section>
+
+    <!-- Sep 14 departures -->
+    <section class="stop major right reveal" data-icon="✈">
+      <div class="node" data-icon="✈"></div>
+      <div class="card">
+        <p class="day"><span>Sep 14</span><span class="dow">Monday</span></p>
+        <h3>Flights home</h3>
+        <p class="sub">Both groups depart Paris on the same day — Chicago in the early afternoon, Tel Aviv in the evening.</p>
+        <div class="flight">
+          <span class="code">Air France · AF136 · A350-900</span>
+          <span class="pt"><span class="ap">CDG</span><span class="tm">13:10</span><span class="dt">Paris · T2E</span></span>
+          <span class="path">✈ &rarr;</span>
+          <span class="pt"><span class="ap">ORD</span><span class="tm">15:10</span><span class="dt">O'Hare · T5</span></span>
+        </div>
+        <div class="flight">
+          <span class="code">El Al · LY328</span>
+          <span class="pt"><span class="ap">CDG</span><span class="tm">17:25</span><span class="dt">Paris · T2B</span></span>
+          <span class="path">✈ &rarr;</span>
+          <span class="pt"><span class="ap">TLV</span><span class="tm">22:55</span><span class="dt">Ben Gurion · T3</span></span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p class="eyebrow">Living document</p>
+    <p>This is the first draft of the plan. We'll keep adding villa days, restaurants, and the things we don't want to miss.</p>
+    <p class="sig">À bientôt — The Azulays</p>
+  </footer>
+
+<script>
+(function () {
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---- Hero: two flight paths converging onto the start of the road ---- */
+  var canvas = document.getElementById("flights");
+  if (canvas && canvas.getContext) {
+    var ctx = canvas.getContext("2d");
+    var W = canvas.width, H = canvas.height;
+
+    // colours
+    var sky = "#4A6C8C", wine = "#7A1F2B", gold = "#C9A227", ink = "#2B2724", muted = "#6B6256";
+
+    // converge point (top of the road = centre bottom)
+    var cx = W / 2, cy = H - 8;
+
+    // two source points: Tel Aviv (left), Chicago (right)
+    var left  = { x: W * 0.10, y: 46, label: "TEL AVIV" };
+    var right = { x: W * 0.90, y: 46, label: "CHICAGO" };
+
+    function bezier(t, p0, p1, p2) {
+      var u = 1 - t;
+      return {
+        x: u*u*p0.x + 2*u*t*p1.x + t*t*p2.x,
+        y: u*u*p0.y + 2*u*t*p1.y + t*t*p2.y
+      };
+    }
+
+    function drawArc(src, ctrl, prog) {
+      ctx.save();
+      ctx.setLineDash([7, 7]);
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = sky;
+      ctx.globalAlpha = 0.85;
+      ctx.beginPath();
+      var first = true;
+      for (var t = 0; t <= prog; t += 0.02) {
+        var p = bezier(t, src, ctrl, { x: cx, y: cy });
+        if (first) { ctx.moveTo(p.x, p.y); first = false; }
+        else ctx.lineTo(p.x, p.y);
+      }
+      ctx.stroke();
+      ctx.restore();
+
+      // plane dot at the head
+      var head = bezier(prog, src, ctrl, { x: cx, y: cy });
+      ctx.fillStyle = wine;
+      ctx.beginPath();
+      ctx.arc(head.x, head.y, 4.5, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    function drawEndpoint(p, label) {
+      ctx.fillStyle = wine;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 6, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = ink;
+      ctx.font = "700 13px 'Space Mono', monospace";
+      ctx.textAlign = p.x < cx ? "left" : "right";
+      ctx.fillText(label, p.x + (p.x < cx ? 12 : -12), p.y + 5);
+    }
+
+    function drawConverge() {
+      // converge marker + "PARIS"
+      ctx.fillStyle = gold;
+      ctx.beginPath();
+      ctx.arc(cx, cy, 8, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = wine; ctx.lineWidth = 3;
+      ctx.beginPath(); ctx.arc(cx, cy, 8, 0, Math.PI * 2); ctx.stroke();
+      ctx.fillStyle = wine;
+      ctx.font = "800 16px 'Bricolage Grotesque', sans-serif";
+      ctx.textAlign = "center";
+      ctx.fillText("PARIS", cx, cy - 16);
+    }
+
+    var ctrlL = { x: W * 0.30, y: 8 };
+    var ctrlR = { x: W * 0.70, y: 8 };
+
+    function frame(prog) {
+      ctx.clearRect(0, 0, W, H);
+      drawArc(left, ctrlL, prog);
+      drawArc(right, ctrlR, prog);
+      drawEndpoint(left, "TEL AVIV");
+      drawEndpoint(right, "CHICAGO");
+      if (prog >= 0.999) drawConverge();
+    }
+
+    if (reduce) {
+      frame(1);
+    } else {
+      var p = 0;
+      (function animate() {
+        p += 0.018;
+        if (p > 1) p = 1;
+        frame(p);
+        if (p < 1) requestAnimationFrame(animate);
+      })();
+    }
+  }
+
+  /* ---- Reveal on scroll ---- */
+  var reveals = document.querySelectorAll(".reveal");
+  if (reduce || !("IntersectionObserver" in window)) {
+    reveals.forEach(function (el) { el.classList.add("in"); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.18 });
+    reveals.forEach(function (el) { io.observe(el); });
+  }
+})();
+</script>
+</body>
+</html>
