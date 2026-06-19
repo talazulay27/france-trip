@@ -341,18 +341,32 @@
     gap: 14px; margin-top: 28px;
   }
   .place {
-    display: flex; flex-direction: column; gap: 6px;
+    display: flex; flex-direction: column; gap: 8px;
     background: var(--card); border: 1px solid var(--line);
     border-radius: 14px; padding: 18px 20px;
-    text-decoration: none; color: var(--text);
+    color: var(--text);
     box-shadow: 0 2px 0 rgba(43,39,36,0.04);
     transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
   }
   .place:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: rgba(122,31,43,0.4); }
+  .place .meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
   .place .num { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; color: #8a6d10; }
+  .place .drive {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-family: var(--font-display); font-weight: 500; font-size: 12px;
+    background: rgba(74,108,140,0.12); color: var(--sky);
+    border: 1px solid rgba(74,108,140,0.3);
+    border-radius: 100px; padding: 2px 11px;
+  }
   .place .nm { font-family: var(--font-display); font-weight: 700; font-size: 20px; color: var(--accent); }
   .place .desc { font-size: 14.5px; color: var(--text); line-height: 1.55; }
-  .place .go { font-size: 13px; color: var(--muted); margin-top: 2px; }
+  .place .links { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: auto; padding-top: 4px; }
+  .place .links a {
+    font-family: var(--font-display); font-weight: 700; font-size: 13.5px;
+    color: var(--accent); text-decoration: none;
+    border-bottom: 1.5px solid rgba(122,31,43,0.3); padding-bottom: 1px;
+  }
+  .place .links a:hover { border-bottom-color: var(--accent); }
 
   /* ---------- כותרת תחתונה ---------- */
   footer {
@@ -426,8 +440,6 @@
         </div>
         <ul class="tasks">
           <li><label><input type="checkbox" id="t-0904-1" /><span><span class="hint">להזמין ולאשר את המלון בפריז</span> (לילה 1)</span></label></li>
-          <li><label><input type="checkbox" id="t-0904-2" /><span>צ'ק-אין במלון בפריז</span></label></li>
-          <li><label><input type="checkbox" id="t-0904-3" /><span>להתמקם ולנוח לפני הנסיעה</span></label></li>
         </ul>
         <span class="tag wine">לילה 1 · פריז</span>
       </div>
@@ -450,9 +462,6 @@
         </div>
         <ul class="tasks">
           <li><label><input type="checkbox" id="t-0905-1" /><span><span class="hint">להזמין את שתי המכוניות השכורות</span></span></label></li>
-          <li><label><input type="checkbox" id="t-0905-2" /><span>לאסוף את שתי המכוניות ב-CDG</span></label></li>
-          <li><label><input type="checkbox" id="t-0905-3" /><span>לנסוע לווילה (כ-3 שעות וחצי)</span></label></li>
-          <li><label><input type="checkbox" id="t-0905-4" /><span>קניות לערב הראשון</span></label></li>
         </ul>
         <span class="tag blue">2 מכוניות</span>
         <span class="tag wine">לילה 1 בווילה</span>
@@ -480,28 +489,18 @@
     <section class="stop right reveal">
       <div class="node"></div>
       <div class="card">
-        <span class="progress"></span>
         <p class="day"><span>6 בספט׳</span><span class="dow">יום ראשון</span></p>
         <h3>היום המלא הראשון בבורגונדי</h3>
         <p class="sub">מתמקמים ומטיילים קרוב לבית.</p>
-        <ul class="tasks">
-          <li><label><input type="checkbox" id="t-0906-1" /><span>לבחור יעד מ"מקומות ליד הווילה"</span></label></li>
-          <li><label><input type="checkbox" id="t-0906-2" /><span>לארגן ארוחת צהריים וערב</span></label></li>
-        </ul>
       </div>
     </section>
 
     <!-- 7 בספטמבר -->
     <section class="stop left reveal">
       <div class="card">
-        <span class="progress"></span>
         <p class="day"><span>7 בספט׳</span><span class="dow">יום שני</span></p>
         <h3>יום בווילה</h3>
         <p class="sub">יום פתוח באזור הווילה.</p>
-        <ul class="tasks">
-          <li><label><input type="checkbox" id="t-0907-1" /><span>לבחור את היעד להיום</span></label></li>
-          <li><label><input type="checkbox" id="t-0907-2" /><span>לתכנן ארוחת ערב</span></label></li>
-        </ul>
       </div>
       <div class="node"></div>
     </section>
@@ -510,28 +509,18 @@
     <section class="stop right reveal">
       <div class="node"></div>
       <div class="card">
-        <span class="progress"></span>
         <p class="day"><span>8 בספט׳</span><span class="dow">יום שלישי</span></p>
         <h3>יום בווילה</h3>
         <p class="sub">יום פתוח באזור הווילה.</p>
-        <ul class="tasks">
-          <li><label><input type="checkbox" id="t-0908-1" /><span>לבחור את היעד להיום</span></label></li>
-          <li><label><input type="checkbox" id="t-0908-2" /><span>לתכנן ארוחת ערב</span></label></li>
-        </ul>
       </div>
     </section>
 
     <!-- 9 בספטמבר -->
     <section class="stop left reveal">
       <div class="card">
-        <span class="progress"></span>
         <p class="day"><span>9 בספט׳</span><span class="dow">יום רביעי</span></p>
         <h3>יום בווילה</h3>
         <p class="sub">יום פתוח באזור הווילה.</p>
-        <ul class="tasks">
-          <li><label><input type="checkbox" id="t-0909-1" /><span>לבחור את היעד להיום</span></label></li>
-          <li><label><input type="checkbox" id="t-0909-2" /><span>לתכנן ארוחת ערב</span></label></li>
-        </ul>
       </div>
       <div class="node"></div>
     </section>
@@ -540,14 +529,9 @@
     <section class="stop right reveal">
       <div class="node"></div>
       <div class="card">
-        <span class="progress"></span>
         <p class="day"><span>10 בספט׳</span><span class="dow">יום חמישי</span></p>
         <h3>יום בווילה</h3>
         <p class="sub">יום פתוח באזור הווילה.</p>
-        <ul class="tasks">
-          <li><label><input type="checkbox" id="t-0910-1" /><span>לבחור את היעד להיום</span></label></li>
-          <li><label><input type="checkbox" id="t-0910-2" /><span>לתכנן ארוחת ערב</span></label></li>
-        </ul>
       </div>
     </section>
 
@@ -559,11 +543,7 @@
         <h3>היום האחרון בווילה · ערב ראש השנה 🍯</h3>
         <p class="sub">היום האחרון בווילה — וגם ליל החג. חוגגים יחד סעודת ראש השנה לפני החזרה לפריז מחר בבוקר.</p>
         <ul class="tasks">
-          <li><label><input type="checkbox" id="t-0911-1" /><span><span class="hint">קניות לסעודת החג</span></span></label></li>
-          <li><label><input type="checkbox" id="t-0911-2" /><span>להכין ארוחת ערב חגיגית</span></label></li>
-          <li><label><input type="checkbox" id="t-0911-3" /><span>סימני החג (תפוח בדבש, רימון, דגים...)</span></label></li>
-          <li><label><input type="checkbox" id="t-0911-4" /><span>לחזור פעם אחרונה למקום האהוב</span></label></li>
-          <li><label><input type="checkbox" id="t-0911-5" /><span>להתחיל לארוז ולתכנן יציאה מוקדמת מחר</span></label></li>
+          <li><label><input type="checkbox" id="t-0911-1" /><span><span class="hint">לתכנן מראש את סעודת ראש השנה</span> (תפריט וקניות)</span></label></li>
         </ul>
         <span class="tag gold">🍯 שנה טובה ומתוקה</span>
       </div>
@@ -583,10 +563,7 @@
         <h3>חזרה לפריז</h3>
         <p class="sub">נוסעים בבוקר ומחזירים את המכוניות. שני לילות בעיר להירגע לפני הטיסות הביתה.</p>
         <ul class="tasks">
-          <li><label><input type="checkbox" id="t-0912-1" /><span>צ'ק-אאוט וסידור הווילה</span></label></li>
-          <li><label><input type="checkbox" id="t-0912-2" /><span><span class="hint">להחזיר את שתי המכוניות השכורות</span></span></label></li>
           <li><label><input type="checkbox" id="t-0912-3" /><span><span class="hint">להזמין ולאשר את המלון בפריז</span> (לילות 8–9)</span></label></li>
-          <li><label><input type="checkbox" id="t-0912-4" /><span>צ'ק-אין במלון בפריז</span></label></li>
         </ul>
         <span class="tag wine">לילות 8–9 · פריז</span>
       </div>
@@ -611,7 +588,6 @@
     <section class="stop major right reveal">
       <div class="node" data-icon="✈"></div>
       <div class="card">
-        <span class="progress"></span>
         <p class="day"><span>14 בספט׳</span><span class="dow">יום שני</span></p>
         <h3>טיסות הביתה</h3>
         <p class="sub">שתי הקבוצות ממריאות מפריז באותו יום — קבוצת נבו אחר הצהריים, הציונים בערב.</p>
@@ -627,12 +603,6 @@
           <span class="path">✈</span>
           <span class="pt"><span class="ap">TLV</span><span class="tm">22:55</span><span class="dt">בן גוריון · T3</span></span>
         </div>
-        <ul class="tasks">
-          <li><label><input type="checkbox" id="t-0914-1" /><span>לארוז ולעשות צ'ק-אאוט</span></label></li>
-          <li><label><input type="checkbox" id="t-0914-2" /><span>להגיע ל-CDG (להשאיר זמן בנוחות)</span></label></li>
-          <li><label><input type="checkbox" id="t-0914-3" /><span>קבוצת נבו: צ'ק-אין לטיסה AF136</span></label></li>
-          <li><label><input type="checkbox" id="t-0914-4" /><span>קבוצת הציונים: צ'ק-אין לטיסה LY328</span></label></li>
-        </ul>
       </div>
     </section>
 
@@ -641,63 +611,85 @@
   <section class="wrap places" id="places">
     <div class="head reveal">
       <h2>מקומות ליד <span class="accent">הווילה</span></h2>
-      <p class="note">מבחר אתרים מומלצים באזור הווילה (בין אוטן לקוּש בלב בורגונדי). הקליקו על כל אחד כדי לפתוח אותו במפות. שלחו לי את השמות מהקישורים ששלחתם ואחליף בהתאם, ונוכל להצמיד מקומות לימים מסוימים.</p>
+      <p class="note">מבחר אתרים מומלצים באזור הווילה, עם זמן נסיעה משוער מהווילה וקישור לאתר הרשמי (כשיש). שלחו לי את השמות מהקישורים ששלחתם ואחליף בהתאם, ונצמיד מקומות לימים.</p>
     </div>
     <div class="grid reveal">
-      <a class="place" href="https://www.google.com/maps/search/?api=1&query=Autun%2C+France" target="_blank" rel="noopener">
-        <span class="num">01</span>
+      <div class="place">
+        <div class="meta"><span class="num">01</span><span class="drive">🚗 כ-20 דק׳</span></div>
         <span class="nm">אוטן (Autun)</span>
-        <span class="desc">עיר רומאית עתיקה ומקסימה — קתדרלת סן-לזאר מהמאה ה-12, תיאטרון רומאי ושערים עתיקים. כ-20 דקות מהווילה.</span>
-        <span class="go">פתחו במפות ↗</span>
-      </a>
-      <a class="place" href="https://www.google.com/maps/search/?api=1&query=Ch%C3%A2teau+de+Sully+Sa%C3%B4ne-et-Loire+France" target="_blank" rel="noopener">
-        <span class="num">02</span>
+        <span class="desc">עיר רומאית עתיקה ומקסימה — קתדרלת סן-לזאר מהמאה ה-12, תיאטרון רומאי ושערים עתיקים.</span>
+        <div class="links">
+          <a href="https://www.google.com/maps/search/?api=1&query=Autun%2C+France" target="_blank" rel="noopener">📍 מפות</a>
+          <a href="https://www.autun-tourisme.com" target="_blank" rel="noopener">🔗 אתר רשמי</a>
+        </div>
+      </div>
+      <div class="place">
+        <div class="meta"><span class="num">02</span><span class="drive">🚗 כ-10 דק׳</span></div>
         <span class="nm">שאטו דה סולי</span>
-        <span class="desc">ארמון רנסאנס מרהיב שמכונה "פונטנבלו של בורגונדי", עם חפיר וגנים. סמוך מאוד — כ-15 דקות.</span>
-        <span class="go">פתחו במפות ↗</span>
-      </a>
-      <a class="place" href="https://www.google.com/maps/search/?api=1&query=Beaune%2C+France" target="_blank" rel="noopener">
-        <span class="num">03</span>
+        <span class="desc">ארמון רנסאנס מרהיב שמכונה "פונטנבלו של בורגונדי", עם חפיר וגנים. סמוך מאוד לווילה.</span>
+        <div class="links">
+          <a href="https://www.google.com/maps/search/?api=1&query=Ch%C3%A2teau+de+Sully+Sa%C3%B4ne-et-Loire+France" target="_blank" rel="noopener">📍 מפות</a>
+          <a href="https://www.chateaudesully.com" target="_blank" rel="noopener">🔗 אתר רשמי</a>
+        </div>
+      </div>
+      <div class="place">
+        <div class="meta"><span class="num">03</span><span class="drive">🚗 כ-50 דק׳</span></div>
         <span class="nm">בון (Beaune)</span>
-        <span class="desc">בירת היין של בורגונדי — אוֹספיס דה בון עם גגות הרעפים הצבעוניים, מרתפי יין וטעימות. כ-50 דקות.</span>
-        <span class="go">פתחו במפות ↗</span>
-      </a>
-      <a class="place" href="https://www.google.com/maps/search/?api=1&query=Bibracte+Mont+Beuvray" target="_blank" rel="noopener">
-        <span class="num">04</span>
+        <span class="desc">בירת היין של בורגונדי — אוֹספיס דה בון עם גגות הרעפים הצבעוניים, מרתפי יין וטעימות.</span>
+        <div class="links">
+          <a href="https://www.google.com/maps/search/?api=1&query=Beaune%2C+France" target="_blank" rel="noopener">📍 מפות</a>
+          <a href="https://www.hospices-de-beaune.com" target="_blank" rel="noopener">🔗 אתר רשמי</a>
+        </div>
+      </div>
+      <div class="place">
+        <div class="meta"><span class="num">04</span><span class="drive">🚗 כ-45 דק׳</span></div>
         <span class="nm">ביברקטה – מון ברווה</span>
-        <span class="desc">אתר קלטי עתיק ומוזיאון ארכאולוגי על פסגה ביער המורוון — נופים ושבילי הליכה. כ-45 דקות.</span>
-        <span class="go">פתחו במפות ↗</span>
-      </a>
-      <a class="place" href="https://www.google.com/maps/search/?api=1&query=Ch%C3%A2teau+de+Couches+France" target="_blank" rel="noopener">
-        <span class="num">05</span>
+        <span class="desc">אתר קלטי עתיק ומוזיאון ארכאולוגי על פסגה ביער המורוון — נופים ושבילי הליכה.</span>
+        <div class="links">
+          <a href="https://www.google.com/maps/search/?api=1&query=Bibracte+Mont+Beuvray" target="_blank" rel="noopener">📍 מפות</a>
+          <a href="https://www.bibracte.fr" target="_blank" rel="noopener">🔗 אתר רשמי</a>
+        </div>
+      </div>
+      <div class="place">
+        <div class="meta"><span class="num">05</span><span class="drive">🚗 כ-15 דק׳</span></div>
         <span class="nm">שאטו דה קוּש</span>
-        <span class="desc">טירת ימי-ביניים עם מגדלים, מרתפים וכרמים מסביב, מעל הכפר קוּש. כ-15 דקות.</span>
-        <span class="go">פתחו במפות ↗</span>
-      </a>
-      <a class="place" href="https://www.google.com/maps/search/?api=1&query=Le+Creusot%2C+France" target="_blank" rel="noopener">
-        <span class="num">06</span>
+        <span class="desc">טירת ימי-ביניים עם מגדלים, מרתפים וכרמים מסביב, מעל הכפר קוּש.</span>
+        <div class="links">
+          <a href="https://www.google.com/maps/search/?api=1&query=Ch%C3%A2teau+de+Couches+France" target="_blank" rel="noopener">📍 מפות</a>
+        </div>
+      </div>
+      <div class="place">
+        <div class="meta"><span class="num">06</span><span class="drive">🚗 כ-30 דק׳</span></div>
         <span class="nm">לֶה קרֶזוֹ</span>
-        <span class="desc">מורשת תעשייתית של בורגונדי — שאטו דה לה ורֶרי, מוזיאון האדם והתעשייה ורכבת קיטור. כ-30 דקות.</span>
-        <span class="go">פתחו במפות ↗</span>
-      </a>
-      <a class="place" href="https://www.google.com/maps/search/?api=1&query=Parc+naturel+r%C3%A9gional+du+Morvan" target="_blank" rel="noopener">
-        <span class="num">07</span>
+        <span class="desc">מורשת תעשייתית של בורגונדי — שאטו דה לה ורֶרי, מוזיאון האדם והתעשייה ורכבת קיטור.</span>
+        <div class="links">
+          <a href="https://www.google.com/maps/search/?api=1&query=Le+Creusot%2C+France" target="_blank" rel="noopener">📍 מפות</a>
+        </div>
+      </div>
+      <div class="place">
+        <div class="meta"><span class="num">07</span><span class="drive">🚗 כ-30–40 דק׳</span></div>
         <span class="nm">הפארק הטבעי מורוון</span>
-        <span class="desc">יערות, אגמים ושבילי הליכה ואופניים בלב הטבע של בורגונדי — מושלם ליום בחוץ. כ-30–40 דקות.</span>
-        <span class="go">פתחו במפות ↗</span>
-      </a>
-      <a class="place" href="https://www.google.com/maps/search/?api=1&query=Dijon%2C+France" target="_blank" rel="noopener">
-        <span class="num">08</span>
+        <span class="desc">יערות, אגמים ושבילי הליכה ואופניים בלב הטבע של בורגונדי — מושלם ליום בחוץ.</span>
+        <div class="links">
+          <a href="https://www.google.com/maps/search/?api=1&query=Parc+naturel+r%C3%A9gional+du+Morvan" target="_blank" rel="noopener">📍 מפות</a>
+          <a href="https://www.parcdumorvan.org" target="_blank" rel="noopener">🔗 אתר רשמי</a>
+        </div>
+      </div>
+      <div class="place">
+        <div class="meta"><span class="num">08</span><span class="drive">🚗 כ-1 ש׳ 15 דק׳</span></div>
         <span class="nm">דיז'ון (Dijon)</span>
-        <span class="desc">בירת בורגונדי ההיסטורית — עיר עתיקה יפה, ארמון הדוכסים, שווקים והחרדל המפורסם. כ-1 שעה ו-15 דקות.</span>
-        <span class="go">פתחו במפות ↗</span>
-      </a>
+        <span class="desc">בירת בורגונדי ההיסטורית — עיר עתיקה יפה, ארמון הדוכסים, שווקים והחרדל המפורסם.</span>
+        <div class="links">
+          <a href="https://www.google.com/maps/search/?api=1&query=Dijon%2C+France" target="_blank" rel="noopener">📍 מפות</a>
+          <a href="https://www.destinationdijon.com" target="_blank" rel="noopener">🔗 אתר רשמי</a>
+        </div>
+      </div>
     </div>
   </section>
 
   <footer>
     <p class="eyebrow">מסמך חי</p>
-    <p>סמנו משימות תוך כדי — הן נשמרות במכשיר הזה. נמשיך להוסיף טיולים, מסעדות ודברים שאסור לפספס.</p>
+    <p>כאן מופיעות רק משימות התכנון — סמנו אותן תוך כדי, הן נשמרות במכשיר הזה. נמשיך להוסיף טיולים, מסעדות ודברים שאסור לפספס.</p>
     <p class="sig">להתראות בקרוב — האזולאים</p>
   </footer>
 
