@@ -1,27 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>The Azulays Trip · France · Sep 2026</title>
-<meta name="description" content="The plan for the Azulays family trip to France, 4–14 September 2026 — Paris, then a villa in Burgundy, then Paris again." />
+<title>הטיול של האזולאים · צרפת · ספטמבר 2026</title>
+<meta name="description" content="התוכנית לטיול המשפחתי של האזולאים בצרפת, 4–14 בספטמבר 2026 — פריז, ואז וילה בבורגונדי, ואז שוב פריז." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Rubik:wght@400;500;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 <style>
   :root {
     --ground: #ECE6D6;
     --ground-2: #E3DCC8;
     --text: #2B2724;
     --muted: #6B6256;
-    --accent: #7A1F2B;     /* burgundy wine */
-    --accent-2: #C9A227;   /* vineyard gold */
-    --road: #38332E;       /* asphalt */
-    --sky: #4A6C8C;        /* french blue */
+    --accent: #7A1F2B;     /* יין בורגונדי */
+    --accent-2: #C9A227;   /* זהב הכרמים */
+    --road: #38332E;       /* אספלט */
+    --sky: #4A6C8C;        /* כחול צרפתי */
     --card: #F6F2E8;
     --line: #D6CDB8;
-    --shadow: 28px 28px 60px rgba(43, 39, 36, 0.10);
+    --shadow: -28px 28px 60px rgba(43, 39, 36, 0.10);
     --road-w: 60px;
+    --font-display: "Rubik", system-ui, sans-serif;
+    --font-body: "Assistant", system-ui, sans-serif;
+    --font-mono: "Space Mono", monospace;
   }
 
   * { box-sizing: border-box; }
@@ -32,32 +35,31 @@
     margin: 0;
     background: var(--ground);
     color: var(--text);
-    font-family: "Inter", system-ui, sans-serif;
+    font-family: var(--font-body);
     font-size: 17px;
-    line-height: 1.6;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
     background-image:
-      radial-gradient(circle at 18% 12%, rgba(122, 31, 43, 0.05), transparent 40%),
-      radial-gradient(circle at 85% 70%, rgba(201, 162, 39, 0.06), transparent 45%);
+      radial-gradient(circle at 82% 12%, rgba(122, 31, 43, 0.05), transparent 40%),
+      radial-gradient(circle at 15% 70%, rgba(201, 162, 39, 0.06), transparent 45%);
   }
 
   .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
 
-  /* ---------- Typography ---------- */
-  h1, h2, h3 { font-family: "Bricolage Grotesque", sans-serif; line-height: 1.02; margin: 0; }
-  .mono { font-family: "Space Mono", monospace; }
+  /* ---------- טיפוגרפיה ---------- */
+  h1, h2, h3 { font-family: var(--font-display); line-height: 1.05; margin: 0; font-weight: 800; }
 
   .eyebrow {
-    font-family: "Space Mono", monospace;
-    font-size: 13px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.04em;
     color: var(--accent);
     margin: 0;
   }
 
-  /* ---------- Hero ---------- */
+  /* ---------- כותרת ראשית ---------- */
   header.hero {
     position: relative;
     padding: 64px 0 0;
@@ -68,24 +70,24 @@
   #flights { display: block; width: 100%; height: auto; }
 
   .hero-title {
-    font-size: clamp(48px, 11vw, 132px);
+    font-size: clamp(46px, 11vw, 128px);
     font-weight: 800;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.01em;
     margin: 14px 0 0;
   }
-  .hero-title .the { display: block; font-size: 0.34em; font-weight: 600; letter-spacing: 0.12em; color: var(--muted); text-transform: uppercase; }
+  .hero-title .the { display: block; font-size: 0.34em; font-weight: 700; color: var(--muted); }
   .hero-title .accent { color: var(--accent); }
 
   .hero-dates {
-    font-family: "Space Mono", monospace;
-    font-size: clamp(15px, 2.4vw, 21px);
-    letter-spacing: 0.16em;
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(16px, 2.4vw, 22px);
     color: var(--text);
     margin: 18px 0 0;
   }
   .hero-dates b { color: var(--accent); font-weight: 700; }
 
-  /* quick facts */
+  /* עובדות מהירות */
   .facts {
     display: flex; flex-wrap: wrap; justify-content: center;
     gap: 14px; margin: 38px 0 8px; padding: 0; list-style: none;
@@ -98,13 +100,13 @@
     padding: 9px 18px;
     box-shadow: 0 2px 0 rgba(43,39,36,0.04);
   }
-  .facts .n { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 22px; color: var(--accent); }
-  .facts .lbl { font-size: 13px; color: var(--muted); letter-spacing: 0.02em; }
+  .facts .n { font-family: var(--font-display); font-weight: 800; font-size: 22px; color: var(--accent); }
+  .facts .lbl { font-size: 14px; color: var(--muted); }
 
-  /* ---------- Route / road ---------- */
+  /* ---------- המסלול / הכביש ---------- */
   .route { position: relative; padding: 36px 0 60px; }
 
-  /* the asphalt road down the middle */
+  /* הכביש האספלט במרכז */
   .route::before {
     content: "";
     position: absolute;
@@ -118,7 +120,7 @@
       var(--road);
     border-radius: 4px;
   }
-  /* dashed centre line */
+  /* קו אמצע מקווקו */
   .route::after {
     content: "";
     position: absolute;
@@ -135,7 +137,7 @@
     border-radius: 2px;
   }
 
-  /* a stop along the road */
+  /* תחנה לאורך הדרך */
   .stop {
     position: relative;
     display: grid;
@@ -167,7 +169,7 @@
     font-size: 17px;
   }
 
-  /* card sides */
+  /* צידי הכרטיסים */
   .card {
     background: var(--card);
     border: 1px solid var(--line);
@@ -177,10 +179,10 @@
     position: relative;
     z-index: 2;
   }
-  .stop.left .card  { grid-column: 1; margin-right: 14px; }
-  .stop.right .card { grid-column: 3; margin-left: 14px; }
+  .stop.left .card  { grid-column: 1; margin-inline-end: 14px; }
+  .stop.right .card { grid-column: 3; margin-inline-start: 14px; }
 
-  /* little connector from card to road node */
+  /* מחבר קטן מהכרטיס לצומת */
   .stop.left .card::after, .stop.right .card::after {
     content: "";
     position: absolute;
@@ -188,29 +190,28 @@
     width: 16px; height: 2px;
     background: var(--line);
   }
-  .stop.left .card::after  { right: -16px; }
-  .stop.right .card::after { left: -16px; }
+  .stop.left .card::after  { inset-inline-end: -16px; }
+  .stop.right .card::after { inset-inline-start: -16px; }
 
   .card .day {
-    font-family: "Space Mono", monospace;
-    font-size: 13px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 13.5px;
     color: var(--accent);
     display: flex; align-items: center; gap: 10px;
     margin: 0 0 6px;
   }
-  .card .day .dow { color: var(--muted); }
-  .card h3 { font-size: 24px; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 8px; padding-right: 52px; }
+  .card .day .dow { color: var(--muted); font-weight: 500; }
+  .card h3 { font-size: 24px; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 8px; padding-inline-end: 56px; }
   .card p  { margin: 0; color: var(--text); }
   .card p + p { margin-top: 10px; }
-  .card .sub { color: var(--muted); font-size: 15px; }
+  .card .sub { color: var(--muted); font-size: 15.5px; }
 
-  /* per-card progress badge */
+  /* תג התקדמות לכל כרטיס */
   .progress {
     position: absolute;
-    top: 20px; right: 22px;
-    font-family: "Space Mono", monospace;
+    top: 20px; inset-inline-end: 22px;
+    font-family: var(--font-mono);
     font-size: 12px;
     color: var(--muted);
     background: var(--ground);
@@ -221,16 +222,16 @@
   }
   .card.all-done .progress { color: #2e6b2e; border-color: #9cc49c; background: #eef6ee; }
 
-  /* task checklist */
+  /* רשימת משימות */
   .tasks { list-style: none; margin: 16px 0 0; padding: 0; display: flex; flex-direction: column; gap: 9px; }
   .tasks label {
     display: flex; align-items: flex-start; gap: 11px;
-    cursor: pointer; font-size: 15px; line-height: 1.45;
+    cursor: pointer; font-size: 15.5px; line-height: 1.5;
     -webkit-tap-highlight-color: transparent;
   }
   .tasks input {
     appearance: none; -webkit-appearance: none;
-    width: 19px; height: 19px; margin: 1px 0 0;
+    width: 19px; height: 19px; margin: 2px 0 0;
     border: 2px solid var(--accent); border-radius: 6px;
     background: var(--card); flex: 0 0 auto; cursor: pointer;
     position: relative; transition: background 0.15s ease;
@@ -243,29 +244,29 @@
   }
   .tasks input:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 2px; }
   .tasks input:checked + span { text-decoration: line-through; color: var(--muted); }
-  .tasks .hint { color: var(--accent); font-weight: 500; }
+  .tasks .hint { color: var(--accent); font-weight: 700; }
 
   .tag {
     display: inline-block;
-    font-family: "Space Mono", monospace;
-    font-size: 11.5px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 4px 10px;
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 12.5px;
+    padding: 4px 12px;
     border-radius: 100px;
-    margin: 14px 6px 0 0;
+    margin: 14px 0 0 6px;
   }
   .tag.gold  { background: rgba(201,162,39,0.18); color: #8a6d10; border: 1px solid rgba(201,162,39,0.45); }
   .tag.wine  { background: rgba(122,31,43,0.10); color: var(--accent); border: 1px solid rgba(122,31,43,0.30); }
   .tag.blue  { background: rgba(74,108,140,0.12); color: var(--sky); border: 1px solid rgba(74,108,140,0.35); }
 
-  /* boarding-pass style flight rows */
+  /* כרטיסי טיסה בסגנון כרטיס עלייה למטוס */
   .flight {
+    direction: ltr;
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
     gap: 10px;
-    font-family: "Space Mono", monospace;
+    font-family: var(--font-mono);
     background: var(--ground);
     border: 1px dashed var(--line);
     border-radius: 10px;
@@ -273,14 +274,19 @@
     margin-top: 14px;
   }
   .flight + .flight { margin-top: 10px; }
-  .flight .code { grid-column: 1 / -1; font-size: 11px; letter-spacing: 0.14em; color: var(--accent); text-transform: uppercase; }
+  .flight .code {
+    direction: rtl; text-align: right;
+    grid-column: 1 / -1;
+    font-family: var(--font-display); font-weight: 700;
+    font-size: 12.5px; color: var(--accent);
+  }
   .flight .pt { text-align: center; }
   .flight .pt .ap { font-weight: 700; font-size: 18px; }
   .flight .pt .tm { font-size: 13px; color: var(--text); }
   .flight .pt .dt { font-size: 11px; color: var(--muted); }
   .flight .path { color: var(--sky); font-size: 18px; text-align: center; }
 
-  /* villa highlight card */
+  /* כרטיס הווילה המודגש */
   .stop.villa .card {
     background: linear-gradient(180deg, #fff8ec, var(--card));
     border-color: rgba(201,162,39,0.5);
@@ -293,37 +299,38 @@
   }
   .addr a { color: var(--accent); font-weight: 600; text-decoration: none; border-bottom: 1.5px solid rgba(122,31,43,0.3); }
   .addr a:hover { border-bottom-color: var(--accent); }
+  .addr .street { direction: ltr; unicode-bidi: embed; }
 
-  /* drive marker (between stops, on the road) */
+  /* סמן נסיעה (בין תחנות, על הכביש) */
   .leg { position: relative; text-align: center; margin: 6px 0; z-index: 3; }
   .leg span {
     display: inline-flex; align-items: center; gap: 8px;
     background: var(--accent); color: #fff;
-    font-family: "Space Mono", monospace;
-    font-size: 12px; letter-spacing: 0.08em;
+    font-family: var(--font-display); font-weight: 500;
+    font-size: 12.5px;
     padding: 7px 16px; border-radius: 100px;
     box-shadow: 0 6px 16px rgba(122,31,43,0.28);
   }
 
-  /* section divider labels on the road */
+  /* תוויות מפרידות על הכביש */
   .chapter { position: relative; text-align: center; margin: 8px 0 2px; z-index: 3; }
   .chapter span {
     display: inline-block; background: var(--ground);
     padding: 4px 16px;
-    font-family: "Space Mono", monospace;
-    font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
+    font-family: var(--font-display); font-weight: 700;
+    font-size: 12.5px; letter-spacing: 0.04em;
     border: 1px solid rgba(201,162,39,0.5);
     border-radius: 100px; color: #8a6d10;
   }
 
-  /* ---------- Places near the villa ---------- */
+  /* ---------- מקומות ליד הווילה ---------- */
   .places { padding: 40px 0 12px; }
   .places .head { text-align: center; margin-bottom: 8px; }
-  .places h2 { font-size: clamp(30px, 6vw, 50px); font-weight: 800; letter-spacing: -0.02em; }
+  .places h2 { font-size: clamp(30px, 6vw, 50px); font-weight: 800; letter-spacing: -0.01em; }
   .places h2 .accent { color: var(--accent); }
-  .places .note { color: var(--muted); font-size: 15px; max-width: 560px; margin: 12px auto 0; }
+  .places .note { color: var(--muted); font-size: 15.5px; max-width: 600px; margin: 12px auto 0; }
   .places .grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: 14px; margin-top: 28px;
   }
   .place {
@@ -335,34 +342,35 @@
     transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
   }
   .place:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: rgba(122,31,43,0.4); }
-  .place .num { font-family: "Space Mono", monospace; font-size: 12px; letter-spacing: 0.12em; color: #8a6d10; }
-  .place .nm { font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; font-size: 19px; color: var(--accent); }
-  .place .go { font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+  .place .num { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; color: #8a6d10; }
+  .place .nm { font-family: var(--font-display); font-weight: 700; font-size: 20px; color: var(--accent); }
+  .place .desc { font-size: 14.5px; color: var(--text); line-height: 1.55; }
+  .place .go { font-size: 13px; color: var(--muted); margin-top: 2px; }
 
-  /* ---------- Footer ---------- */
+  /* ---------- כותרת תחתונה ---------- */
   footer {
     text-align: center; padding: 48px 24px 64px;
     border-top: 1px solid var(--line); margin-top: 20px;
   }
   footer .eyebrow { color: var(--muted); }
-  footer p { color: var(--muted); max-width: 520px; margin: 12px auto 0; font-size: 15px; }
-  footer .sig { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 22px; color: var(--accent); margin-top: 18px; }
+  footer p { color: var(--muted); max-width: 560px; margin: 12px auto 0; font-size: 15.5px; }
+  footer .sig { font-family: var(--font-display); font-weight: 800; font-size: 22px; color: var(--accent); margin-top: 18px; }
 
-  /* ---------- Entrance animation ---------- */
+  /* ---------- אנימציית כניסה ---------- */
   .reveal { opacity: 0; transform: translateY(18px); }
   .reveal.in { opacity: 1; transform: none; transition: opacity 0.7s ease, transform 0.7s cubic-bezier(.2,.7,.2,1); }
 
-  /* ---------- Mobile ---------- */
+  /* ---------- מובייל ---------- */
   @media (max-width: 720px) {
     body { font-size: 16px; }
     :root { --road-w: 40px; }
-    .route::before { left: 0; transform: none; }
-    .route::after  { left: 20px; }
+    .route::before { inset-inline-start: 0; left: auto; right: auto; transform: none; }
+    .route::after  { inset-inline-start: 18px; left: auto; right: auto; transform: none; }
     .stop { grid-template-columns: var(--road-w) 1fr; column-gap: 0; align-items: start; }
     .node { grid-column: 1; justify-self: center; margin-top: 26px; }
-    .stop.left .card, .stop.right .card { grid-column: 2; margin: 0 0 0 18px; }
-    .stop.left .card::after, .stop.right .card::after { left: -18px; right: auto; top: 34px; }
-    .leg, .chapter { text-align: left; padding-left: 8px; }
+    .stop.left .card, .stop.right .card { grid-column: 2; margin: 0; margin-inline-start: 18px; }
+    .stop.left .card::after, .stop.right .card::after { inset-inline-start: -18px; inset-inline-end: auto; top: 34px; }
+    .leg, .chapter { text-align: start; padding-inline-start: 8px; }
     .facts { gap: 10px; }
   }
 
@@ -379,241 +387,241 @@
       <div class="hero-canvas-wrap">
         <canvas id="flights" width="1040" height="240" aria-hidden="true"></canvas>
       </div>
-      <p class="eyebrow">The plan · France 2026</p>
-      <h1 class="hero-title"><span class="the">The</span> <span class="accent">Azulays</span> Trip</h1>
-      <p class="hero-dates"><b>04 SEP</b> &rarr; <b>14 SEP</b> · 2026 · 10 nights</p>
+      <p class="eyebrow">התוכנית · צרפת 2026</p>
+      <h1 class="hero-title"><span class="the">הטיול של</span> <span class="accent">האזולאים</span></h1>
+      <p class="hero-dates"><b>4</b> &ndash; <b>14</b> בספטמבר 2026 · 10 לילות</p>
 
       <ul class="facts">
-        <li><span class="n">2</span><span class="lbl">groups converging</span></li>
-        <li><span class="n">2</span><span class="lbl">rental cars</span></li>
-        <li><span class="n">1</span><span class="lbl">villa in Burgundy</span></li>
-        <li><span class="n">3</span><span class="lbl">nights in Paris</span></li>
+        <li><span class="n">2</span><span class="lbl">קבוצות שמתאחדות</span></li>
+        <li><span class="n">2</span><span class="lbl">מכוניות שכורות</span></li>
+        <li><span class="n">1</span><span class="lbl">וילה בבורגונדי</span></li>
+        <li><span class="n">3</span><span class="lbl">לילות בפריז</span></li>
       </ul>
     </div>
   </header>
 
   <main class="wrap route">
 
-    <div class="chapter reveal"><span>Paris · arrival</span></div>
+    <div class="chapter reveal"><span>פריז · הגעה</span></div>
 
-    <!-- Sep 4 — Zionists group -->
+    <!-- 4 בספטמבר — קבוצת הציונים -->
     <section class="stop major left reveal">
       <div class="card">
         <span class="progress"></span>
-        <p class="day"><span>Sep 4</span><span class="dow">Friday</span></p>
-        <h3>The Zionists group lands in Paris</h3>
-        <p class="sub">The Zionists group touches down first and stays the night in Paris — the buffer that lets both groups start the drive together tomorrow.</p>
+        <p class="day"><span>4 בספט׳</span><span class="dow">יום שישי</span></p>
+        <h3>קבוצת הציונים נוחתת בפריז</h3>
+        <p class="sub">קבוצת הציונים נוחתת ראשונה ולנה בפריז — לילה שמאפשר לשתי הקבוצות לצאת יחד לדרך מחר.</p>
         <div class="flight">
-          <span class="code">El Al · LY319 · Zionists group</span>
-          <span class="pt"><span class="ap">TLV</span><span class="tm">05:50</span><span class="dt">Ben Gurion · T3</span></span>
-          <span class="path">✈ &rarr;</span>
-          <span class="pt"><span class="ap">CDG</span><span class="tm">09:40</span><span class="dt">Paris · T2B</span></span>
+          <span class="code">אל על · LY319 · קבוצת הציונים</span>
+          <span class="pt"><span class="ap">TLV</span><span class="tm">05:50</span><span class="dt">בן גוריון · T3</span></span>
+          <span class="path">✈</span>
+          <span class="pt"><span class="ap">CDG</span><span class="tm">09:40</span><span class="dt">פריז · T2B</span></span>
         </div>
         <ul class="tasks">
-          <li><label><input type="checkbox" id="t-0904-1" /><span><span class="hint">Book &amp; confirm the Paris hotel</span> (night 1)</span></label></li>
-          <li><label><input type="checkbox" id="t-0904-2" /><span>Check in to the Paris hotel</span></label></li>
-          <li><label><input type="checkbox" id="t-0904-3" /><span>Settle in &amp; rest before the drive</span></label></li>
+          <li><label><input type="checkbox" id="t-0904-1" /><span><span class="hint">להזמין ולאשר את המלון בפריז</span> (לילה 1)</span></label></li>
+          <li><label><input type="checkbox" id="t-0904-2" /><span>צ'ק-אין במלון בפריז</span></label></li>
+          <li><label><input type="checkbox" id="t-0904-3" /><span>להתמקם ולנוח לפני הנסיעה</span></label></li>
         </ul>
-        <span class="tag wine">Night 1 · Paris</span>
+        <span class="tag wine">לילה 1 · פריז</span>
       </div>
       <div class="node" data-icon="✈"></div>
     </section>
 
-    <!-- Sep 5 — Nevo's group + cars -->
+    <!-- 5 בספטמבר — קבוצת נבו + מכוניות -->
     <section class="stop major right reveal">
       <div class="node" data-icon="✈"></div>
       <div class="card">
         <span class="progress"></span>
-        <p class="day"><span>Sep 5</span><span class="dow">Saturday</span></p>
-        <h3>Nevo's group lands — then we drive</h3>
-        <p class="sub">Nevo's group arrives in the morning. Everyone meets at the airport, picks up the two rental cars, and we head south to Burgundy.</p>
+        <p class="day"><span>5 בספט׳</span><span class="dow">יום שבת</span></p>
+        <h3>קבוצת נבו נוחתת — ויוצאים לדרך</h3>
+        <p class="sub">קבוצת נבו נוחתת בבוקר. כולם נפגשים בשדה התעופה, אוספים את שתי המכוניות השכורות, ונוסעים דרומה לבורגונדי.</p>
         <div class="flight">
-          <span class="code">Air France · AF137 · Nevo's group · A350-900</span>
-          <span class="pt"><span class="ap">ORD</span><span class="tm">17:10</span><span class="dt">Sep 4 · O'Hare T5</span></span>
-          <span class="path">✈ &rarr;</span>
-          <span class="pt"><span class="ap">CDG</span><span class="tm">08:15</span><span class="dt">Sep 5 · T2E</span></span>
+          <span class="code">אייר פראנס · AF137 · קבוצת נבו · A350-900</span>
+          <span class="pt"><span class="ap">ORD</span><span class="tm">17:10</span><span class="dt">4 בספט׳ · שיקגו T5</span></span>
+          <span class="path">✈</span>
+          <span class="pt"><span class="ap">CDG</span><span class="tm">08:15</span><span class="dt">5 בספט׳ · T2E</span></span>
         </div>
         <ul class="tasks">
-          <li><label><input type="checkbox" id="t-0905-1" /><span><span class="hint">Book the 2 rental cars</span></span></label></li>
-          <li><label><input type="checkbox" id="t-0905-2" /><span>Pick up the 2 cars at CDG</span></label></li>
-          <li><label><input type="checkbox" id="t-0905-3" /><span>Drive to the villa (~3h 30m)</span></label></li>
-          <li><label><input type="checkbox" id="t-0905-4" /><span>Grocery stop for the first night</span></label></li>
+          <li><label><input type="checkbox" id="t-0905-1" /><span><span class="hint">להזמין את שתי המכוניות השכורות</span></span></label></li>
+          <li><label><input type="checkbox" id="t-0905-2" /><span>לאסוף את שתי המכוניות ב-CDG</span></label></li>
+          <li><label><input type="checkbox" id="t-0905-3" /><span>לנסוע לווילה (כ-3 שעות וחצי)</span></label></li>
+          <li><label><input type="checkbox" id="t-0905-4" /><span>קניות לערב הראשון</span></label></li>
         </ul>
-        <span class="tag blue">2 cars</span>
-        <span class="tag wine">Villa night 1</span>
+        <span class="tag blue">2 מכוניות</span>
+        <span class="tag wine">לילה 1 בווילה</span>
       </div>
     </section>
 
-    <div class="leg reveal"><span>🚗  Paris &rarr; Burgundy · ~300 km · ~3h 30m</span></div>
+    <div class="leg reveal"><span>🚗  מפריז לבורגונדי · כ-300 ק"מ · כ-3.5 שעות</span></div>
 
-    <div class="chapter reveal"><span>The villa · Burgundy</span></div>
+    <div class="chapter reveal"><span>הווילה · בורגונדי</span></div>
 
-    <!-- Villa intro -->
+    <!-- מבוא הווילה -->
     <section class="stop villa major left reveal">
       <div class="card">
-        <p class="day"><span>Home base</span><span class="dow">Sep 5 &rarr; 12 · 7 nights</span></p>
-        <h3>The Villa</h3>
-        <p class="sub">Our base in the Burgundy countryside. Most of the trip happens from here — vineyards, villages, and slow mornings. Spots to choose from are down in <a href="#places" style="color:var(--accent);font-weight:600;">Places near the villa</a>.</p>
+        <p class="day"><span>בית הבסיס</span><span class="dow">5–12 בספט׳ · 7 לילות</span></p>
+        <h3>הווילה</h3>
+        <p class="sub">בית הבסיס שלנו בכפר הבורגונדי. רוב הטיול מתרחש מכאן — כרמים, כפרים ובקרים נינוחים. המקומות לבחירה נמצאים למטה ב<a href="#places" style="color:var(--accent);font-weight:700;">מקומות ליד הווילה</a>.</p>
         <div class="addr">
-          📍 <a href="https://maps.google.com/?q=11+Route+de+Bouton%2C+71360+Saint-L%C3%A9ger-du-Bois%2C+France&ftid=0x47f2418e09e820ef:0x6df53d6575e9eae0" target="_blank" rel="noopener">11 Route de Bouton, 71360 Saint-Léger-du-Bois</a>
+          📍 <a class="street" href="https://maps.google.com/?q=11+Route+de+Bouton%2C+71360+Saint-L%C3%A9ger-du-Bois%2C+France&ftid=0x47f2418e09e820ef:0x6df53d6575e9eae0" target="_blank" rel="noopener" dir="ltr">11 Route de Bouton, 71360 Saint-Léger-du-Bois</a>
         </div>
       </div>
       <div class="node" data-icon="🏡"></div>
     </section>
 
-    <!-- Sep 6 -->
+    <!-- 6 בספטמבר -->
     <section class="stop right reveal">
       <div class="node"></div>
       <div class="card">
         <span class="progress"></span>
-        <p class="day"><span>Sep 6</span><span class="dow">Sunday</span></p>
-        <h3>First full day in Burgundy</h3>
-        <p class="sub">Settle in and explore close to home.</p>
+        <p class="day"><span>6 בספט׳</span><span class="dow">יום ראשון</span></p>
+        <h3>היום המלא הראשון בבורגונדי</h3>
+        <p class="sub">מתמקמים ומטיילים קרוב לבית.</p>
         <ul class="tasks">
-          <li><label><input type="checkbox" id="t-0906-1" /><span>Pick today's outing from Places near the villa</span></label></li>
-          <li><label><input type="checkbox" id="t-0906-2" /><span>Sort lunch &amp; dinner</span></label></li>
+          <li><label><input type="checkbox" id="t-0906-1" /><span>לבחור יעד מ"מקומות ליד הווילה"</span></label></li>
+          <li><label><input type="checkbox" id="t-0906-2" /><span>לארגן ארוחת צהריים וערב</span></label></li>
         </ul>
       </div>
     </section>
 
-    <!-- Sep 7 -->
+    <!-- 7 בספטמבר -->
     <section class="stop left reveal">
       <div class="card">
         <span class="progress"></span>
-        <p class="day"><span>Sep 7</span><span class="dow">Monday</span></p>
-        <h3>Villa day</h3>
-        <p class="sub">Open day around the villa.</p>
+        <p class="day"><span>7 בספט׳</span><span class="dow">יום שני</span></p>
+        <h3>יום בווילה</h3>
+        <p class="sub">יום פתוח באזור הווילה.</p>
         <ul class="tasks">
-          <li><label><input type="checkbox" id="t-0907-1" /><span>Choose today's outing</span></label></li>
-          <li><label><input type="checkbox" id="t-0907-2" /><span>Plan dinner</span></label></li>
+          <li><label><input type="checkbox" id="t-0907-1" /><span>לבחור את היעד להיום</span></label></li>
+          <li><label><input type="checkbox" id="t-0907-2" /><span>לתכנן ארוחת ערב</span></label></li>
         </ul>
       </div>
       <div class="node"></div>
     </section>
 
-    <!-- Sep 8 -->
+    <!-- 8 בספטמבר -->
     <section class="stop right reveal">
       <div class="node"></div>
       <div class="card">
         <span class="progress"></span>
-        <p class="day"><span>Sep 8</span><span class="dow">Tuesday</span></p>
-        <h3>Villa day</h3>
-        <p class="sub">Open day around the villa.</p>
+        <p class="day"><span>8 בספט׳</span><span class="dow">יום שלישי</span></p>
+        <h3>יום בווילה</h3>
+        <p class="sub">יום פתוח באזור הווילה.</p>
         <ul class="tasks">
-          <li><label><input type="checkbox" id="t-0908-1" /><span>Choose today's outing</span></label></li>
-          <li><label><input type="checkbox" id="t-0908-2" /><span>Plan dinner</span></label></li>
+          <li><label><input type="checkbox" id="t-0908-1" /><span>לבחור את היעד להיום</span></label></li>
+          <li><label><input type="checkbox" id="t-0908-2" /><span>לתכנן ארוחת ערב</span></label></li>
         </ul>
       </div>
     </section>
 
-    <!-- Sep 9 -->
+    <!-- 9 בספטמבר -->
     <section class="stop left reveal">
       <div class="card">
         <span class="progress"></span>
-        <p class="day"><span>Sep 9</span><span class="dow">Wednesday</span></p>
-        <h3>Villa day</h3>
-        <p class="sub">Open day around the villa.</p>
+        <p class="day"><span>9 בספט׳</span><span class="dow">יום רביעי</span></p>
+        <h3>יום בווילה</h3>
+        <p class="sub">יום פתוח באזור הווילה.</p>
         <ul class="tasks">
-          <li><label><input type="checkbox" id="t-0909-1" /><span>Choose today's outing</span></label></li>
-          <li><label><input type="checkbox" id="t-0909-2" /><span>Plan dinner</span></label></li>
+          <li><label><input type="checkbox" id="t-0909-1" /><span>לבחור את היעד להיום</span></label></li>
+          <li><label><input type="checkbox" id="t-0909-2" /><span>לתכנן ארוחת ערב</span></label></li>
         </ul>
       </div>
       <div class="node"></div>
     </section>
 
-    <!-- Sep 10 -->
+    <!-- 10 בספטמבר -->
     <section class="stop right reveal">
       <div class="node"></div>
       <div class="card">
         <span class="progress"></span>
-        <p class="day"><span>Sep 10</span><span class="dow">Thursday</span></p>
-        <h3>Villa day</h3>
-        <p class="sub">Open day around the villa.</p>
+        <p class="day"><span>10 בספט׳</span><span class="dow">יום חמישי</span></p>
+        <h3>יום בווילה</h3>
+        <p class="sub">יום פתוח באזור הווילה.</p>
         <ul class="tasks">
-          <li><label><input type="checkbox" id="t-0910-1" /><span>Choose today's outing</span></label></li>
-          <li><label><input type="checkbox" id="t-0910-2" /><span>Plan dinner</span></label></li>
+          <li><label><input type="checkbox" id="t-0910-1" /><span>לבחור את היעד להיום</span></label></li>
+          <li><label><input type="checkbox" id="t-0910-2" /><span>לתכנן ארוחת ערב</span></label></li>
         </ul>
       </div>
     </section>
 
-    <!-- Sep 11 -->
+    <!-- 11 בספטמבר -->
     <section class="stop left reveal">
       <div class="card">
         <span class="progress"></span>
-        <p class="day"><span>Sep 11</span><span class="dow">Friday</span></p>
-        <h3>Last villa day</h3>
-        <p class="sub">Make the most of it, then get ready to head back to Paris in the morning.</p>
+        <p class="day"><span>11 בספט׳</span><span class="dow">יום שישי</span></p>
+        <h3>היום האחרון בווילה</h3>
+        <p class="sub">ליהנות עד הסוף ולהתארגן לחזרה לפריז בבוקר.</p>
         <ul class="tasks">
-          <li><label><input type="checkbox" id="t-0911-1" /><span>Favourite spot, one more time</span></label></li>
-          <li><label><input type="checkbox" id="t-0911-2" /><span>Start packing</span></label></li>
-          <li><label><input type="checkbox" id="t-0911-3" /><span>Plan early start tomorrow</span></label></li>
+          <li><label><input type="checkbox" id="t-0911-1" /><span>לחזור פעם אחרונה למקום האהוב</span></label></li>
+          <li><label><input type="checkbox" id="t-0911-2" /><span>להתחיל לארוז</span></label></li>
+          <li><label><input type="checkbox" id="t-0911-3" /><span>לתכנן יציאה מוקדמת מחר</span></label></li>
         </ul>
       </div>
       <div class="node"></div>
     </section>
 
-    <div class="leg reveal"><span>🚗  Burgundy &rarr; Paris · morning drive · return cars</span></div>
+    <div class="leg reveal"><span>🚗  מבורגונדי לפריז · נסיעת בוקר · החזרת המכוניות</span></div>
 
-    <div class="chapter reveal"><span>Paris · the send-off</span></div>
+    <div class="chapter reveal"><span>פריז · הפרידה</span></div>
 
-    <!-- Sep 12 — back to Paris -->
+    <!-- 12 בספטמבר — חזרה לפריז -->
     <section class="stop major right reveal">
       <div class="node" data-icon="🚗"></div>
       <div class="card">
         <span class="progress"></span>
-        <p class="day"><span>Sep 12</span><span class="dow">Saturday</span></p>
-        <h3>Back to Paris</h3>
-        <p class="sub">Drive up in the morning and return the cars. Two nights in the city to wind down before everyone flies home.</p>
+        <p class="day"><span>12 בספט׳</span><span class="dow">יום שבת</span></p>
+        <h3>חזרה לפריז</h3>
+        <p class="sub">נוסעים בבוקר ומחזירים את המכוניות. שני לילות בעיר להירגע לפני הטיסות הביתה.</p>
         <ul class="tasks">
-          <li><label><input type="checkbox" id="t-0912-1" /><span>Check out &amp; tidy the villa</span></label></li>
-          <li><label><input type="checkbox" id="t-0912-2" /><span><span class="hint">Return the 2 rental cars</span></span></label></li>
-          <li><label><input type="checkbox" id="t-0912-3" /><span><span class="hint">Book &amp; confirm the Paris hotel</span> (nights 8–9)</span></label></li>
-          <li><label><input type="checkbox" id="t-0912-4" /><span>Check in to the Paris hotel</span></label></li>
+          <li><label><input type="checkbox" id="t-0912-1" /><span>צ'ק-אאוט וסידור הווילה</span></label></li>
+          <li><label><input type="checkbox" id="t-0912-2" /><span><span class="hint">להחזיר את שתי המכוניות השכורות</span></span></label></li>
+          <li><label><input type="checkbox" id="t-0912-3" /><span><span class="hint">להזמין ולאשר את המלון בפריז</span> (לילות 8–9)</span></label></li>
+          <li><label><input type="checkbox" id="t-0912-4" /><span>צ'ק-אין במלון בפריז</span></label></li>
         </ul>
-        <span class="tag wine">Nights 8–9 · Paris</span>
+        <span class="tag wine">לילות 8–9 · פריז</span>
       </div>
     </section>
 
-    <!-- Sep 13 — Paris -->
+    <!-- 13 בספטמבר — פריז -->
     <section class="stop left reveal">
       <div class="card">
         <span class="progress"></span>
-        <p class="day"><span>Sep 13</span><span class="dow">Sunday</span></p>
-        <h3>Paris day</h3>
-        <p class="sub">A full day in the city. Plans to be added.</p>
+        <p class="day"><span>13 בספט׳</span><span class="dow">יום ראשון</span></p>
+        <h3>יום בפריז</h3>
+        <p class="sub">יום שלם בעיר. פרטים יתווספו.</p>
         <ul class="tasks">
-          <li><label><input type="checkbox" id="t-0913-1" /><span>Plan the Paris day</span></label></li>
-          <li><label><input type="checkbox" id="t-0913-2" /><span>Dinner reservation</span></label></li>
+          <li><label><input type="checkbox" id="t-0913-1" /><span>לתכנן את היום בפריז</span></label></li>
+          <li><label><input type="checkbox" id="t-0913-2" /><span>להזמין מקום לארוחת ערב</span></label></li>
         </ul>
       </div>
       <div class="node"></div>
     </section>
 
-    <!-- Sep 14 — departures -->
+    <!-- 14 בספטמבר — טיסות -->
     <section class="stop major right reveal">
       <div class="node" data-icon="✈"></div>
       <div class="card">
         <span class="progress"></span>
-        <p class="day"><span>Sep 14</span><span class="dow">Monday</span></p>
-        <h3>Flights home</h3>
-        <p class="sub">Both groups depart Paris the same day — Nevo's group in the early afternoon, the Zionists in the evening.</p>
+        <p class="day"><span>14 בספט׳</span><span class="dow">יום שני</span></p>
+        <h3>טיסות הביתה</h3>
+        <p class="sub">שתי הקבוצות ממריאות מפריז באותו יום — קבוצת נבו אחר הצהריים, הציונים בערב.</p>
         <div class="flight">
-          <span class="code">Air France · AF136 · Nevo's group · A350-900</span>
-          <span class="pt"><span class="ap">CDG</span><span class="tm">13:10</span><span class="dt">Paris · T2E</span></span>
-          <span class="path">✈ &rarr;</span>
-          <span class="pt"><span class="ap">ORD</span><span class="tm">15:10</span><span class="dt">O'Hare · T5</span></span>
+          <span class="code">אייר פראנס · AF136 · קבוצת נבו · A350-900</span>
+          <span class="pt"><span class="ap">CDG</span><span class="tm">13:10</span><span class="dt">פריז · T2E</span></span>
+          <span class="path">✈</span>
+          <span class="pt"><span class="ap">ORD</span><span class="tm">15:10</span><span class="dt">שיקגו · T5</span></span>
         </div>
         <div class="flight">
-          <span class="code">El Al · LY328 · Zionists group</span>
-          <span class="pt"><span class="ap">CDG</span><span class="tm">17:25</span><span class="dt">Paris · T2B</span></span>
-          <span class="path">✈ &rarr;</span>
-          <span class="pt"><span class="ap">TLV</span><span class="tm">22:55</span><span class="dt">Ben Gurion · T3</span></span>
+          <span class="code">אל על · LY328 · קבוצת הציונים</span>
+          <span class="pt"><span class="ap">CDG</span><span class="tm">17:25</span><span class="dt">פריז · T2B</span></span>
+          <span class="path">✈</span>
+          <span class="pt"><span class="ap">TLV</span><span class="tm">22:55</span><span class="dt">בן גוריון · T3</span></span>
         </div>
         <ul class="tasks">
-          <li><label><input type="checkbox" id="t-0914-1" /><span>Pack &amp; check out</span></label></li>
-          <li><label><input type="checkbox" id="t-0914-2" /><span>Get to CDG (leave time to spare)</span></label></li>
-          <li><label><input type="checkbox" id="t-0914-3" /><span>Nevo's group: check in for AF136</span></label></li>
-          <li><label><input type="checkbox" id="t-0914-4" /><span>Zionists group: check in for LY328</span></label></li>
+          <li><label><input type="checkbox" id="t-0914-1" /><span>לארוז ולעשות צ'ק-אאוט</span></label></li>
+          <li><label><input type="checkbox" id="t-0914-2" /><span>להגיע ל-CDG (להשאיר זמן בנוחות)</span></label></li>
+          <li><label><input type="checkbox" id="t-0914-3" /><span>קבוצת נבו: צ'ק-אין לטיסה AF136</span></label></li>
+          <li><label><input type="checkbox" id="t-0914-4" /><span>קבוצת הציונים: צ'ק-אין לטיסה LY328</span></label></li>
         </ul>
       </div>
     </section>
@@ -622,32 +630,72 @@
 
   <section class="wrap places" id="places">
     <div class="head reveal">
-      <h2>Places near <span class="accent">the villa</span></h2>
-      <p class="note">A starting list of spots in the area. Tap any to open it in Maps — send me the names and I'll label each one (and we can pin them to specific days).</p>
+      <h2>מקומות ליד <span class="accent">הווילה</span></h2>
+      <p class="note">מבחר אתרים מומלצים באזור הווילה (בין אוטן לקוּש בלב בורגונדי). הקליקו על כל אחד כדי לפתוח אותו במפות. שלחו לי את השמות מהקישורים ששלחתם ואחליף בהתאם, ונוכל להצמיד מקומות לימים מסוימים.</p>
     </div>
     <div class="grid reveal">
-      <a class="place" href="https://maps.app.goo.gl/Dd8fZbRbXyE1mnJm7" target="_blank" rel="noopener"><span class="num">SPOT 01</span><span class="nm">Place 1</span><span class="go">Open in Maps ↗</span></a>
-      <a class="place" href="https://maps.app.goo.gl/Z22bBDQhvmKtsfKy6" target="_blank" rel="noopener"><span class="num">SPOT 02</span><span class="nm">Place 2</span><span class="go">Open in Maps ↗</span></a>
-      <a class="place" href="https://maps.app.goo.gl/Jr3LFfGkstwbAjJS6" target="_blank" rel="noopener"><span class="num">SPOT 03</span><span class="nm">Place 3</span><span class="go">Open in Maps ↗</span></a>
-      <a class="place" href="https://maps.app.goo.gl/8q9Xqm22cf5bmN5R9" target="_blank" rel="noopener"><span class="num">SPOT 04</span><span class="nm">Place 4</span><span class="go">Open in Maps ↗</span></a>
-      <a class="place" href="https://maps.app.goo.gl/vEdmvX4aZWbbUxrt7" target="_blank" rel="noopener"><span class="num">SPOT 05</span><span class="nm">Place 5</span><span class="go">Open in Maps ↗</span></a>
-      <a class="place" href="https://maps.app.goo.gl/2DvHngKBBBttNZ4j7" target="_blank" rel="noopener"><span class="num">SPOT 06</span><span class="nm">Place 6</span><span class="go">Open in Maps ↗</span></a>
-      <a class="place" href="https://maps.app.goo.gl/gfZyJkKdHa4SizHWA" target="_blank" rel="noopener"><span class="num">SPOT 07</span><span class="nm">Place 7</span><span class="go">Open in Maps ↗</span></a>
-      <a class="place" href="https://maps.app.goo.gl/PCBg6pZMMXZQdM1N9" target="_blank" rel="noopener"><span class="num">SPOT 08</span><span class="nm">Place 8</span><span class="go">Open in Maps ↗</span></a>
+      <a class="place" href="https://www.google.com/maps/search/?api=1&query=Autun%2C+France" target="_blank" rel="noopener">
+        <span class="num">01</span>
+        <span class="nm">אוטן (Autun)</span>
+        <span class="desc">עיר רומאית עתיקה ומקסימה — קתדרלת סן-לזאר מהמאה ה-12, תיאטרון רומאי ושערים עתיקים. כ-20 דקות מהווילה.</span>
+        <span class="go">פתחו במפות ↗</span>
+      </a>
+      <a class="place" href="https://www.google.com/maps/search/?api=1&query=Ch%C3%A2teau+de+Sully+Sa%C3%B4ne-et-Loire+France" target="_blank" rel="noopener">
+        <span class="num">02</span>
+        <span class="nm">שאטו דה סולי</span>
+        <span class="desc">ארמון רנסאנס מרהיב שמכונה "פונטנבלו של בורגונדי", עם חפיר וגנים. סמוך מאוד — כ-15 דקות.</span>
+        <span class="go">פתחו במפות ↗</span>
+      </a>
+      <a class="place" href="https://www.google.com/maps/search/?api=1&query=Beaune%2C+France" target="_blank" rel="noopener">
+        <span class="num">03</span>
+        <span class="nm">בון (Beaune)</span>
+        <span class="desc">בירת היין של בורגונדי — אוֹספיס דה בון עם גגות הרעפים הצבעוניים, מרתפי יין וטעימות. כ-50 דקות.</span>
+        <span class="go">פתחו במפות ↗</span>
+      </a>
+      <a class="place" href="https://www.google.com/maps/search/?api=1&query=Bibracte+Mont+Beuvray" target="_blank" rel="noopener">
+        <span class="num">04</span>
+        <span class="nm">ביברקטה – מון ברווה</span>
+        <span class="desc">אתר קלטי עתיק ומוזיאון ארכאולוגי על פסגה ביער המורוון — נופים ושבילי הליכה. כ-45 דקות.</span>
+        <span class="go">פתחו במפות ↗</span>
+      </a>
+      <a class="place" href="https://www.google.com/maps/search/?api=1&query=Ch%C3%A2teau+de+Couches+France" target="_blank" rel="noopener">
+        <span class="num">05</span>
+        <span class="nm">שאטו דה קוּש</span>
+        <span class="desc">טירת ימי-ביניים עם מגדלים, מרתפים וכרמים מסביב, מעל הכפר קוּש. כ-15 דקות.</span>
+        <span class="go">פתחו במפות ↗</span>
+      </a>
+      <a class="place" href="https://www.google.com/maps/search/?api=1&query=Le+Creusot%2C+France" target="_blank" rel="noopener">
+        <span class="num">06</span>
+        <span class="nm">לֶה קרֶזוֹ</span>
+        <span class="desc">מורשת תעשייתית של בורגונדי — שאטו דה לה ורֶרי, מוזיאון האדם והתעשייה ורכבת קיטור. כ-30 דקות.</span>
+        <span class="go">פתחו במפות ↗</span>
+      </a>
+      <a class="place" href="https://www.google.com/maps/search/?api=1&query=Parc+naturel+r%C3%A9gional+du+Morvan" target="_blank" rel="noopener">
+        <span class="num">07</span>
+        <span class="nm">הפארק הטבעי מורוון</span>
+        <span class="desc">יערות, אגמים ושבילי הליכה ואופניים בלב הטבע של בורגונדי — מושלם ליום בחוץ. כ-30–40 דקות.</span>
+        <span class="go">פתחו במפות ↗</span>
+      </a>
+      <a class="place" href="https://www.google.com/maps/search/?api=1&query=Dijon%2C+France" target="_blank" rel="noopener">
+        <span class="num">08</span>
+        <span class="nm">דיז'ון (Dijon)</span>
+        <span class="desc">בירת בורגונדי ההיסטורית — עיר עתיקה יפה, ארמון הדוכסים, שווקים והחרדל המפורסם. כ-1 שעה ו-15 דקות.</span>
+        <span class="go">פתחו במפות ↗</span>
+      </a>
     </div>
   </section>
 
   <footer>
-    <p class="eyebrow">Living document</p>
-    <p>Tick tasks off as you go — they're saved on this device. We'll keep adding villa outings, restaurants, and the things we don't want to miss.</p>
-    <p class="sig">À bientôt — The Azulays</p>
+    <p class="eyebrow">מסמך חי</p>
+    <p>סמנו משימות תוך כדי — הן נשמרות במכשיר הזה. נמשיך להוסיף טיולים, מסעדות ודברים שאסור לפספס.</p>
+    <p class="sig">להתראות בקרוב — האזולאים</p>
   </footer>
 
 <script>
 (function () {
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* ---- Hero: two flight paths converging onto the start of the road ---- */
+  /* ---- כותרת: שני מסלולי טיסה שמתאחדים בתחילת הכביש ---- */
   var canvas = document.getElementById("flights");
   if (canvas && canvas.getContext) {
     var ctx = canvas.getContext("2d");
@@ -686,11 +734,11 @@
       ctx.textAlign = p.x < cx ? "left" : "right";
       var dx = p.x < cx ? 12 : -12;
       ctx.fillStyle = wine;
-      ctx.font = "800 15px 'Bricolage Grotesque', sans-serif";
+      ctx.font = "800 16px 'Rubik', sans-serif";
       ctx.fillText(label, p.x + dx, p.y + 1);
       ctx.fillStyle = ink;
-      ctx.font = "400 11px 'Space Mono', monospace";
-      ctx.fillText(sub, p.x + dx, p.y + 17);
+      ctx.font = "400 12px 'Rubik', sans-serif";
+      ctx.fillText(sub, p.x + dx, p.y + 18);
     }
     function drawConverge() {
       ctx.fillStyle = gold;
@@ -698,17 +746,17 @@
       ctx.strokeStyle = wine; ctx.lineWidth = 3;
       ctx.beginPath(); ctx.arc(cx, cy, 8, 0, Math.PI * 2); ctx.stroke();
       ctx.fillStyle = wine;
-      ctx.font = "800 16px 'Bricolage Grotesque', sans-serif";
+      ctx.font = "800 17px 'Rubik', sans-serif";
       ctx.textAlign = "center";
-      ctx.fillText("PARIS", cx, cy - 16);
+      ctx.fillText("פריז", cx, cy - 16);
     }
     var ctrlL = { x: W * 0.30, y: 8 }, ctrlR = { x: W * 0.70, y: 8 };
     function frame(prog) {
       ctx.clearRect(0, 0, W, H);
       drawArc(left, ctrlL, prog);
       drawArc(right, ctrlR, prog);
-      drawEndpoint(left, "ZIONISTS", "from Tel Aviv");
-      drawEndpoint(right, "NEVO'S", "from Chicago");
+      drawEndpoint(left, "הציונים", "מתל אביב");
+      drawEndpoint(right, "נבו", "משיקגו");
       if (prog >= 0.999) drawConverge();
     }
     if (reduce) { frame(1); }
@@ -721,7 +769,7 @@
     }
   }
 
-  /* ---- Task checklists (saved per device) ---- */
+  /* ---- רשימות משימות (נשמרות לכל מכשיר) ---- */
   var KEY = "azulays-trip-tasks";
   var state = {};
   try { state = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { state = {}; }
@@ -745,7 +793,7 @@
   });
   document.querySelectorAll(".card").forEach(updateCard);
 
-  /* ---- Reveal on scroll ---- */
+  /* ---- חשיפה בגלילה ---- */
   var reveals = document.querySelectorAll(".reveal");
   if (reduce || !("IntersectionObserver" in window)) {
     reveals.forEach(function (el) { el.classList.add("in"); });
