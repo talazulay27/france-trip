@@ -299,6 +299,29 @@
     border-color: rgba(201,162,39,0.65);
   }
   .stop.holiday h3 { color: var(--accent); }
+
+  /* כרטיס יום היין */
+  .stop.wineday .card {
+    background: linear-gradient(180deg, #f7ecec, var(--card));
+    border-color: rgba(122,31,43,0.45);
+  }
+  .stop.wineday h3 { color: var(--accent); }
+
+  /* לוח זמנים קטן בתוך כרטיס */
+  .sched { list-style: none; margin: 16px 0 0; padding: 0; display: flex; flex-direction: column; gap: 9px; }
+  .sched li { display: flex; gap: 11px; align-items: baseline; font-size: 15px; line-height: 1.5; }
+  .sched .tm {
+    font-family: var(--font-mono); font-weight: 700; font-size: 12.5px;
+    color: var(--accent); flex: 0 0 auto; min-width: 52px;
+  }
+  .sched .big { font-weight: 700; }
+  .route-line {
+    margin-top: 14px; padding: 10px 14px;
+    background: var(--ground); border: 1px solid var(--line); border-radius: 10px;
+    font-family: var(--font-display); font-weight: 500; font-size: 13.5px;
+    color: var(--muted); text-align: center;
+  }
+  .route-line b { color: var(--accent); font-weight: 700; }
   .addr {
     margin-top: 14px; padding-top: 14px;
     border-top: 1px solid var(--line);
@@ -519,14 +542,32 @@
       </div>
     </section>
 
-    <!-- 9 בספטמבר -->
-    <section class="stop left reveal">
+    <!-- 9 בספטמבר — יום יין · כביש היקבים -->
+    <section class="stop wineday major left reveal">
       <div class="card">
+        <span class="progress"></span>
         <p class="day"><span>9 בספט׳</span><span class="dow">יום רביעי</span></p>
-        <h3>יום בווילה</h3>
-        <p class="sub">יום פתוח באזור הווילה.</p>
+        <h3>יום יין · כביש היקבים 🍷</h3>
+        <p class="sub">יורדים לבון בבוקר, ואז מטפסים צפונה בכביש היין דרך שרשרת כפרים קטנים — כולם 5–10 דק׳ זה מזה — עד שחוזרים לווילה בערב. הכל בקו אחד, בלי נסיעות מיותרות. ספטמבר הוא אמצע הבציר, אז הכרמים בפעולה.</p>
+        <ol class="sched">
+          <li><span class="tm">09:00</span><span>נסיעה מהווילה לבון (כ-45 דק׳)</span></li>
+          <li><span class="tm">10:00</span><span>בון — הוֹטֶל-דְיֶה עם הגגות הצבעוניים והעיר העתיקה</span></li>
+          <li><span class="tm">12:30</span><span>צהריים בורגונדי אמיתי בכפר — וולנה או פומאר</span></li>
+          <li><span class="tm">14:45</span><span class="big">שאטו דה מרסו — טעימת 7 יינות + סיור במרתפים (הכוכב של היום)</span></li>
+          <li><span class="tm">16:00</span><span>שאטו דה סביני — "טעימת גילוי" ב-10€, בדרך חזרה</span></li>
+          <li><span class="tm">17:00</span><span>חזרה לווילה (כ-45 דק׳)</span></li>
+        </ol>
+        <div class="route-line">בון <b>←</b> פומאר <b>←</b> וולנה <b>←</b> מרסו <b>←</b> סביני</div>
+        <ul class="tasks">
+          <li><label><input type="checkbox" id="t-0909-1" /><span><span class="hint">להזמין טעימה + סיור בשאטו דה מרסו</span> (חובה · chateau-meursault.com)</span></label></li>
+          <li><label><input type="checkbox" id="t-0909-2" /><span><span class="hint">להזמין שולחן לצהריים</span> (Le Cellier Volnaysien / Auprès du Clocher)</span></label></li>
+          <li><label><input type="checkbox" id="t-0909-3" /><span>לקנות כרטיסים אונליין להוטל-דיה בון</span></label></li>
+          <li><label><input type="checkbox" id="t-0909-4" /><span>למנות נהג תורן לכל רכב — בטעימות יורקים ולא בולעים</span></label></li>
+        </ul>
+        <span class="tag wine">🍷 יום יין</span>
+        <span class="tag blue">נהג תורן חובה</span>
       </div>
-      <div class="node"></div>
+      <div class="node" data-icon="🍷"></div>
     </section>
 
     <!-- 10 בספטמבר -->
@@ -682,6 +723,32 @@
         <div class="links">
           <a href="https://www.google.com/maps/search/?api=1&query=Dijon%2C+France" target="_blank" rel="noopener">📍 מפות</a>
           <a href="https://www.destinationdijon.com" target="_blank" rel="noopener">🔗 אתר רשמי</a>
+        </div>
+      </div>
+      <div class="place">
+        <div class="meta"><span class="num">09</span><span class="drive">🍷 יום היין · 9 בספט׳</span></div>
+        <span class="nm">שאטו דה מרסו</span>
+        <span class="desc">היקב ה"רציני" של יום היין — טעימת 7 יינות (אדומים ולבנים) עם סיור במרתפים המרשימים. פתוח בספטמבר כל יום. חובה להזמין מראש.</span>
+        <div class="links">
+          <a href="https://www.google.com/maps/search/?api=1&query=Ch%C3%A2teau+de+Meursault+France" target="_blank" rel="noopener">📍 מפות</a>
+          <a href="https://www.chateau-meursault.com" target="_blank" rel="noopener">🔗 אתר רשמי</a>
+        </div>
+      </div>
+      <div class="place">
+        <div class="meta"><span class="num">10</span><span class="drive">🍷 יום היין · 9 בספט׳</span></div>
+        <span class="nm">שאטו דה סביני-לה-בון</span>
+        <span class="desc">"טעימת גילוי" ב-10€ של 3 אפלסיונים, עצירה נוחה בדרך חזרה מבון. בונוס: 7 מוזיאונים מוזרים בשטח (מטוסי קרב, אופנועים, מכוניות מרוץ) שילדים אוהבים.</span>
+        <div class="links">
+          <a href="https://www.google.com/maps/search/?api=1&query=Ch%C3%A2teau+de+Savigny-l%C3%A8s-Beaune+France" target="_blank" rel="noopener">📍 מפות</a>
+          <a href="https://www.chateau-savigny.com" target="_blank" rel="noopener">🔗 אתר רשמי</a>
+        </div>
+      </div>
+      <div class="place">
+        <div class="meta"><span class="num">11</span><span class="drive">🍽️ צהריים · 9 בספט׳</span></div>
+        <span class="nm">Le Cellier Volnaysien (וולנה)</span>
+        <span class="desc">מסעדה משפחתית מ-1975 המתמחה במאכלי בורגונדי קלאסיים — אֶסקַרגו, œufs en meurette, coq au vin — עם רשימת יינות יפה במחירים סבירים. מומלץ להזמין.</span>
+        <div class="links">
+          <a href="https://www.google.com/maps/search/?api=1&query=Le+Cellier+Volnaysien+Volnay+France" target="_blank" rel="noopener">📍 מפות</a>
         </div>
       </div>
     </div>
