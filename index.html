@@ -377,6 +377,113 @@
   footer p { color: var(--muted); max-width: 560px; margin: 12px auto 0; font-size: 15.5px; }
   footer .sig { font-family: var(--font-display); font-weight: 800; font-size: 22px; color: var(--accent); margin-top: 18px; }
 
+  /* ---------- צ'ק ליסט ---------- */
+  .checklist-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    margin: 30px auto 4px; cursor: pointer;
+    font-family: var(--font-display); font-weight: 700; font-size: 15.5px;
+    color: #fff; background: var(--accent);
+    border: none; border-radius: 100px; padding: 13px 26px;
+    box-shadow: 0 8px 22px rgba(122,31,43,0.32);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .checklist-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(122,31,43,0.42); }
+  .cl-count {
+    font-family: var(--font-mono); font-weight: 700; font-size: 12.5px;
+    background: rgba(255,255,255,0.22); border-radius: 100px; padding: 2px 9px;
+  }
+
+  /* כפתור צף */
+  .checklist-fab {
+    position: fixed; inset-block-end: 20px; inset-inline-start: 20px; z-index: 40;
+    display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+    font-family: var(--font-display); font-weight: 700; font-size: 14px;
+    color: #fff; background: var(--accent);
+    border: none; border-radius: 100px; padding: 12px 18px;
+    box-shadow: 0 10px 26px rgba(122,31,43,0.4);
+    opacity: 0; pointer-events: none; transform: translateY(12px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+  .checklist-fab.show { opacity: 1; pointer-events: auto; transform: none; }
+
+  /* שכבת רקע */
+  .cl-overlay {
+    position: fixed; inset: 0; z-index: 50;
+    background: rgba(43,39,36,0.55);
+    -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);
+    display: flex; align-items: flex-start; justify-content: center;
+    padding: 40px 20px; overflow-y: auto;
+    opacity: 0; pointer-events: none; transition: opacity 0.25s ease;
+  }
+  .cl-overlay.open { opacity: 1; pointer-events: auto; }
+
+  /* החלונית */
+  .cl-panel {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 20px; width: 100%; max-width: 580px;
+    box-shadow: -28px 28px 80px rgba(43,39,36,0.32);
+    transform: translateY(20px) scale(0.98);
+    transition: transform 0.28s cubic-bezier(.2,.7,.2,1);
+    overflow: hidden; margin-bottom: 40px;
+  }
+  .cl-overlay.open .cl-panel { transform: none; }
+
+  .cl-head {
+    position: sticky; top: 0; z-index: 2;
+    background: linear-gradient(180deg, #fff8ec, var(--card));
+    border-bottom: 1px solid var(--line);
+    padding: 22px 24px 18px;
+  }
+  .cl-head .row { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+  .cl-head .eyebrow { color: var(--accent); }
+  .cl-head h2 { font-size: 25px; font-weight: 800; margin: 5px 0 0; }
+  .cl-close {
+    flex: 0 0 auto; width: 38px; height: 38px; border-radius: 50%;
+    border: 1px solid var(--line); background: var(--ground);
+    font-size: 17px; color: var(--muted); cursor: pointer; line-height: 1;
+    display: grid; place-items: center; transition: color 0.12s ease, border-color 0.12s ease;
+  }
+  .cl-close:hover { color: var(--accent); border-color: var(--accent); }
+
+  .cl-progress { margin-top: 16px; }
+  .cl-progress .bar { height: 8px; border-radius: 100px; background: var(--ground-2); overflow: hidden; }
+  .cl-progress .bar > i { display: block; height: 100%; width: 0; border-radius: 100px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); transition: width 0.35s ease; }
+  .cl-progress .txt { font-family: var(--font-mono); font-size: 12.5px; color: var(--muted); margin-top: 8px; }
+
+  .cl-body { padding: 6px 24px 26px; }
+  .cl-group { margin-top: 22px; }
+  .cl-group > h3 {
+    font-family: var(--font-display); font-weight: 700; font-size: 13px;
+    letter-spacing: 0.04em; color: #8a6d10; margin: 0;
+    border-bottom: 1px solid rgba(201,162,39,0.4); padding-bottom: 8px;
+  }
+  .cl-list { list-style: none; margin: 10px 0 0; padding: 0; display: flex; flex-direction: column; gap: 3px; }
+  .cl-list label {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 10px; border-radius: 12px; cursor: pointer;
+    transition: background 0.12s ease;
+  }
+  .cl-list label:hover { background: var(--ground); }
+  .cl-list input {
+    appearance: none; -webkit-appearance: none;
+    width: 20px; height: 20px; margin: 1px 0 0; flex: 0 0 auto;
+    border: 2px solid var(--accent); border-radius: 6px; background: var(--card);
+    cursor: pointer; position: relative; transition: background 0.15s ease;
+  }
+  .cl-list input:checked { background: var(--accent); }
+  .cl-list input:checked::after { content: "✓"; position: absolute; inset: 0; color: #fff; font-size: 13px; font-weight: 700; display: grid; place-items: center; }
+  .cl-list input:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 2px; }
+  .cl-list .it { display: flex; flex-direction: column; gap: 2px; }
+  .cl-list .it .t { font-size: 15.5px; line-height: 1.4; }
+  .cl-list .it .d { font-family: var(--font-display); font-size: 11.5px; color: var(--muted); }
+  .cl-list input:checked ~ .it .t { text-decoration: line-through; color: var(--muted); }
+
+  @media (max-width: 720px) {
+    .cl-overlay { padding: 20px 12px; }
+    .cl-head h2 { font-size: 21px; }
+    .checklist-fab { inset-block-end: 16px; inset-inline-start: 16px; }
+  }
+
   /* ---------- אנימציית כניסה ---------- */
   .reveal { opacity: 0; transform: translateY(18px); }
   .reveal.in { opacity: 1; transform: none; transition: opacity 0.7s ease, transform 0.7s cubic-bezier(.2,.7,.2,1); }
@@ -408,16 +515,9 @@
       <div class="hero-canvas-wrap">
         <canvas id="flights" width="1040" height="240" aria-hidden="true"></canvas>
       </div>
-      <p class="eyebrow">התוכנית · צרפת 2026</p>
-      <h1 class="hero-title"><span class="the">הטיול של</span> <span class="accent">האזולאים</span></h1>
+      <h1 class="hero-title">אזולאים <span class="accent">בפריז</span></h1>
       <p class="hero-dates"><b>4</b> &ndash; <b>14</b> בספטמבר 2026 · 10 לילות</p>
-
-      <ul class="facts">
-        <li><span class="n">2</span><span class="lbl">קבוצות שמתאחדות</span></li>
-        <li><span class="n">2</span><span class="lbl">מכוניות שכורות</span></li>
-        <li><span class="n">1</span><span class="lbl">וילה בבורגונדי</span></li>
-        <li><span class="n">4</span><span class="lbl">לילות בפריז</span></li>
-      </ul>
+      <button type="button" class="checklist-btn" id="cl-open">📋 צ׳ק ליסט <span class="cl-count" id="cl-count-hero">0/0</span></button>
     </div>
   </header>
 
@@ -437,8 +537,7 @@
           <span class="path">✈</span>
           <span class="pt"><span class="ap">CDG</span><span class="tm">09:40</span><span class="dt">פריז · T2B</span></span>
         </div>
-        <div class="addr">🏨 <a href="https://he.airbnb.com/rooms/1287438598279697757" target="_blank" rel="noopener">מקום הלינה בפריז — Airbnb ↗</a></div>
-        <span class="tag wine">לילות 1–3 · פריז · הוזמן ✓</span>
+        <div class="addr">🏨 <a href="https://he.airbnb.com/rooms/1287438598279697757" target="_blank" rel="noopener">מקום הלינה בפריז — Airbnb ↗</a><br />📍 <a class="street" href="https://www.google.com/maps/search/?api=1&query=154+Bd+Saint-Germain%2C+75005+Paris%2C+France" target="_blank" rel="noopener" dir="ltr">154 Bd Saint-Germain, 75005 Paris ↗</a></div>
         <ul class="tasks">
           <li><label><input type="checkbox" id="t-0904-cruise-find" /><span><span class="hint">🚤 שיט / שיטוט בעיר</span></span></label></li>
           <li><label><input type="checkbox" id="t-0904-rest-find" /><span><span class="hint">מסעדה לערב הראשון</span> — או ארוחת ערב על שיט בסן</span></label></li>
@@ -470,7 +569,6 @@
     <!-- 6 בספטמבר — פריז -->
     <section class="stop left reveal">
       <div class="card">
-        <span class="progress"></span>
         <p class="day"><span>6 בספט׳</span><span class="dow">יום ראשון</span></p>
         <h3>יום בפריז</h3>
         <p class="sub">יום מלא בעיר לפני היציאה לבורגונדי — שוק בבוקר, סיור אוכל, ובערב הבר המגניב.</p>
@@ -491,7 +589,6 @@
     <section class="stop villa major right reveal">
       <div class="node" data-icon="🏡"></div>
       <div class="card">
-        <span class="progress"></span>
         <p class="day"><span>7 בספט׳</span><span class="dow">יום שני · 7–13 בספט׳ · 6 לילות</span></p>
         <h3>נוסעים לווילה — בית הבסיס</h3>
         <p class="sub">בבוקר אוספים את שתי המכוניות ויוצאים דרומה לבורגונדי. צ'ק-אין בווילה, קניות לבית וערב רגוע להתמקם. זהו בית הבסיס שלנו בכפר הבורגונדי — רוב הטיול מתרחש מכאן — כרמים, כפרים ובקרים נינוחים. המקומות לבחירה נמצאים למטה ב<a href="#places" style="color:var(--accent);font-weight:700;">מקומות ליד הווילה</a>.</p>
@@ -518,7 +615,6 @@
     <!-- 9 בספטמבר -->
     <section class="stop left reveal">
       <div class="card">
-        <span class="progress"></span>
         <p class="day"><span>9 בספט׳</span><span class="dow">יום רביעי</span></p>
         <h3>Beaune + יום יין עצמאי</h3>
         <p class="sub">היום המרכזי. בוקר ב-Beaune — הוטל-דיה ושיטוט בעיר. צהריים בכפר יין, ואחר הצהריים טעימות עצמאיות: אחת "רצינית" שמוזמנת מראש, והשנייה ספונטנית בכפר.</p>
@@ -550,7 +646,7 @@
         <h3>יום פנוי · ערב ראש השנה</h3>
         <p class="sub">עדיין לא נקבע — נשלים בהמשך.</p>
         <ul class="tasks">
-          <li><label><input type="checkbox" id="t-0911-1" /><span><span class="hint">סגירת מסעדה / ארוחת חג באזור</span></span></label></li>
+          <li><label><input type="checkbox" id="t-0911-1" /><span><span class="hint">מסעדה / ארוחת חג באזור</span></span></label></li>
         </ul>
       </div>
       <div class="node"></div>
@@ -573,14 +669,13 @@
     <!-- 13 בספטמבר — חזרה לפריז, לילה אחרון -->
     <section class="stop major left reveal">
       <div class="card">
-        <span class="progress"></span>
         <p class="day"><span>13 בספט׳</span><span class="dow">יום ראשון</span></p>
         <h3>חזרה לפריז · הלילה האחרון</h3>
         <p class="sub">נוסעים בבוקר, מחזירים את המכוניות, ולנים לילה אחרון בפריז לפני הטיסה הביתה.</p>
         <ul class="tasks">
           <li><label><input type="checkbox" id="t-0913-2" /><span>מסעדה לסיום הטיול</span></label></li>
         </ul>
-        <div class="addr">🏨 <a href="https://www.booking.com/Share-5i20Fz" target="_blank" rel="noopener">המלון בפריז — Booking.com ↗</a></div>
+        <div class="addr">🏨 <a href="https://www.booking.com/Share-5i20Fz" target="_blank" rel="noopener">המלון בפריז — Booking.com ↗</a><br />📍 <a class="street" href="https://www.google.com/maps/search/?api=1&query=42+Rue+des+Bernardins%2C+75005+Paris%2C+France" target="_blank" rel="noopener" dir="ltr">42 Rue des Bernardins, 75005 Paris ↗</a></div>
         <span class="tag wine">לילה 10 · פריז · הוזמן ✓</span>
       </div>
       <div class="node" data-icon="🚗"></div>
@@ -626,7 +721,7 @@
         </div>
       </div>
       <div class="place">
-        <div class="meta"><span class="num">02</span><span class="drive">🍷 אסף גרניט</span></div>
+        <div class="meta"><span class="num">02</span><span class="drive">🍷 בר יין</span></div>
         <span class="nm">Shana</span>
         <span class="desc">בר-יין ים-תיכוני של השף אסף גרניט (רחוב Saint-Sauveur, פריז 2) — מנות לשיתוף בהשראת ירושלים ופריז, ורשימת יינות מהלבנט ועד פרובאנס. כדאי להזמין מראש.</span>
         <div class="links">
@@ -675,8 +770,88 @@
     </div>
   </section>
 
+  <!-- כפתור צף לצ'ק ליסט -->
+  <button type="button" class="checklist-fab" id="cl-fab">📋 צ׳ק ליסט <span class="cl-count" id="cl-count-fab">0/0</span></button>
+
+  <!-- חלונית הצ'ק ליסט -->
+  <div class="cl-overlay" id="cl-overlay" role="dialog" aria-modal="true" aria-labelledby="cl-title">
+    <div class="cl-panel">
+      <div class="cl-head">
+        <div class="row">
+          <div>
+            <p class="eyebrow">לפני הטיול</p>
+            <h2 id="cl-title">צ׳ק ליסט · מה לסגור מראש</h2>
+          </div>
+          <button type="button" class="cl-close" id="cl-close" aria-label="סגירה">✕</button>
+        </div>
+        <div class="cl-progress">
+          <div class="bar"><i id="cl-bar"></i></div>
+          <div class="txt" id="cl-txt">0 מתוך 0 הושלמו</div>
+        </div>
+      </div>
+      <div class="cl-body">
+
+        <div class="cl-group">
+          <h3>4 בספט׳ · שישי — פריז</h3>
+          <ul class="cl-list">
+            <li><label><input type="checkbox" data-mirror="t-book-paris-1" checked /><span class="it"><span class="t">🏨 הזמנת מקום הלינה בפריז (לילות 1–3)</span><span class="d">הוזמן ✓</span></span></label></li>
+            <li><label><input type="checkbox" data-mirror="t-0904-cruise-find" /><span class="it"><span class="t">🚤 שיט / שיטוט בעיר</span></span></label></li>
+            <li><label><input type="checkbox" data-mirror="t-0904-rest-find" /><span class="it"><span class="t">🍽️ מסעדה לערב הראשון / ארוחה על שיט בסן</span></span></label></li>
+          </ul>
+        </div>
+
+        <div class="cl-group">
+          <h3>5 בספט׳ · שבת — פריז</h3>
+          <ul class="cl-list">
+            <li><label><input type="checkbox" data-mirror="t-0905-attr-find" /><span class="it"><span class="t">📍 אטרקציות — אייפל / ד׳אורסה / לובר</span></span></label></li>
+            <li><label><input type="checkbox" data-mirror="t-0905-rest-find" /><span class="it"><span class="t">🍷 מסעדה חגיגית לכל החבורה</span></span></label></li>
+          </ul>
+        </div>
+
+        <div class="cl-group">
+          <h3>6 בספט׳ · ראשון — פריז</h3>
+          <ul class="cl-list">
+            <li><label><input type="checkbox" data-mirror="t-0906-market-find" /><span class="it"><span class="t">🧺 שוק לבוקר ראשון</span></span></label></li>
+            <li><label><input type="checkbox" data-mirror="t-0906-tour-find" /><span class="it"><span class="t">🍽️ סיור אוכל</span></span></label></li>
+            <li><label><input type="checkbox" data-mirror="t-0906-bar-find" /><span class="it"><span class="t">🍸 בר קוקטיילים</span></span></label></li>
+          </ul>
+        </div>
+
+        <div class="cl-group">
+          <h3>7 בספט׳ · שני — נסיעה לווילה</h3>
+          <ul class="cl-list">
+            <li><label><input type="checkbox" data-mirror="t-0907-1" /><span class="it"><span class="t">🚗 להזמין את שתי המכוניות השכורות</span><span class="d">איסוף בפריז</span></span></label></li>
+          </ul>
+        </div>
+
+        <div class="cl-group">
+          <h3>9 בספט׳ · רביעי — Beaune</h3>
+          <ul class="cl-list">
+            <li><label><input type="checkbox" data-mirror="t-0909-4" /><span class="it"><span class="t">🍷 טעימות יין ב-Maison Joseph Drouhin</span><span class="d">להזמין מראש</span></span></label></li>
+          </ul>
+        </div>
+
+        <div class="cl-group">
+          <h3>11 בספט׳ · שישי · ערב ראש השנה 🍯</h3>
+          <ul class="cl-list">
+            <li><label><input type="checkbox" data-mirror="t-0911-1" /><span class="it"><span class="t">🍯 מסעדה / ארוחת חג באזור הווילה</span></span></label></li>
+          </ul>
+        </div>
+
+        <div class="cl-group">
+          <h3>13 בספט׳ · ראשון — פריז</h3>
+          <ul class="cl-list">
+            <li><label><input type="checkbox" data-mirror="t-book-paris-2" checked /><span class="it"><span class="t">🏨 הזמנת המלון בפריז (לילה 10)</span><span class="d">הוזמן ✓</span></span></label></li>
+            <li><label><input type="checkbox" data-mirror="t-0913-2" /><span class="it"><span class="t">🍽️ מסעדה לסיום הטיול</span></span></label></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
   <footer>
-    <p class="sig">להתראות בקרוב — האזולאים</p>
+    <p class="sig">להתראות בקרוב</p>
   </footer>
 
 <script>
@@ -777,9 +952,67 @@
       state[b.id] = b.checked;
       save();
       updateCard(b.closest(".card"));
+      var m = document.querySelector('.cl-list input[data-mirror="' + b.id + '"]');
+      if (m && m.checked !== b.checked) m.checked = b.checked;
+      updateChecklist();
     });
   });
   document.querySelectorAll(".card").forEach(updateCard);
+
+  /* ---- צ'ק ליסט (חלונית + כפתורים) ---- */
+  var clInputs = document.querySelectorAll(".cl-list input");
+  var overlay = document.getElementById("cl-overlay");
+  var fab = document.getElementById("cl-fab");
+
+  function updateChecklist() {
+    var total = clInputs.length, done = 0;
+    clInputs.forEach(function (i) { if (i.checked) done++; });
+    var pct = total ? Math.round((done / total) * 100) : 0;
+    var bar = document.getElementById("cl-bar");
+    if (bar) bar.style.width = pct + "%";
+    var txt = document.getElementById("cl-txt");
+    if (txt) txt.textContent = done + " מתוך " + total + " הושלמו";
+    ["cl-count-hero", "cl-count-fab"].forEach(function (id) {
+      var e = document.getElementById(id);
+      if (e) e.textContent = done + "/" + total;
+    });
+  }
+
+  clInputs.forEach(function (i) {
+    var id = i.getAttribute("data-mirror");
+    // פריטים שמסומנים כברירת מחדל (הזמנות שכבר סגורות) — נזרעים למצב השמור בפעם הראשונה
+    if (id && i.checked && state[id] === undefined) { state[id] = true; save(); }
+    if (id) i.checked = !!state[id];
+    i.addEventListener("change", function () {
+      state[id] = i.checked;
+      save();
+      var day = document.getElementById(id);
+      if (day && day.checked !== i.checked) {
+        day.checked = i.checked;
+        updateCard(day.closest(".card"));
+      }
+      updateChecklist();
+    });
+  });
+  updateChecklist();
+
+  function openCl() { if (overlay) { overlay.classList.add("open"); document.body.style.overflow = "hidden"; } }
+  function closeCl() { if (overlay) { overlay.classList.remove("open"); document.body.style.overflow = ""; } }
+
+  var openBtn = document.getElementById("cl-open");
+  if (openBtn) openBtn.addEventListener("click", openCl);
+  if (fab) fab.addEventListener("click", openCl);
+  var closeBtn = document.getElementById("cl-close");
+  if (closeBtn) closeBtn.addEventListener("click", closeCl);
+  if (overlay) overlay.addEventListener("click", function (e) { if (e.target === overlay) closeCl(); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeCl(); });
+
+  if (fab) {
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 420) fab.classList.add("show");
+      else fab.classList.remove("show");
+    }, { passive: true });
+  }
 
   /* ---- חשיפה בגלילה ---- */
   var reveals = document.querySelectorAll(".reveal");
