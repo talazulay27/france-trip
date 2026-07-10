@@ -483,6 +483,7 @@
   .sched li { display: flex; gap: 10px; align-items: baseline; font-size: 14.5px; line-height: 1.5; }
   .sched .tm { font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: var(--accent); flex: 0 0 48px; }
   .sched-note { font-size: 13px; color: var(--muted); margin: 12px 0 0; line-height: 1.6; }
+  .sched-line { margin: 14px 0 0; }
 
   /* קישור לפרטי הסיור */
   .tour-link {
@@ -564,18 +565,7 @@
           <span class="pt"><span class="ap">CDG</span><span class="tm">09:40</span><span class="dt">פריז · T2B</span></span>
         </div>
         <div class="addr">🏨 <a href="https://he.airbnb.com/rooms/1287438598279697757" target="_blank" rel="noopener">מקום הלינה בפריז — Airbnb ↗</a><br />📍 <a class="street" href="https://www.google.com/maps/search/?api=1&query=154+Bd+Saint-Germain%2C+75005+Paris%2C+France" target="_blank" rel="noopener" dir="ltr">154 Bd Saint-Germain, 75005 Paris ↗</a></div>
-        <ul class="sched">
-          <li><span class="tm">09:30</span><span>נוחתים ב-CDG</span></li>
-          <li><span class="tm">~11:30</span><span>מגיעים לסן ז׳רמן, משאירים חפצים</span></li>
-          <li><span class="tm">12:30</span><span>ארוחת צהריים באזור (ברסרי מקומית)</span></li>
-          <li><span class="tm">14:00</span><span>גני טיולרי — הליכה ומנוחה</span></li>
-          <li><span class="tm">15:15</span><span>המארה — שיטוט ברחובות וחנויות</span></li>
-          <li><span class="tm">16:45</span><span>יורדים לאי סיטה, עוצרים בנוטרדאם</span></li>
-          <li><span class="tm">17:45</span><span>חוזרים דרך גני לוקסמבורג (שקיעה יפה)</span></li>
-          <li><span class="tm">19:00</span><span>חזרה למלון, מקלחת ומנוחה</span></li>
-          <li><span class="tm">20:30</span><span>יוצאים לארוחת ערב 🍷</span></li>
-        </ul>
-        <p class="sched-note">בהצלחה ותיהנו! אם מישהו נשבר בדרך — תמיד אפשר לוותר על נוטרדאם/סיטה ולחזור ישר ללוקסמבורג 😊</p>
+        <p class="sched-line"><button type="button" class="tour-link" data-pop="day1-overlay">🗓️ התוכנית המלאה ליום הנחיתה · 09:30–20:30 — לחצו לפרטים</button></p>
         <ul class="tasks">
           <li><label><input type="checkbox" id="t-0904-rest-find" /><span><span class="hint">🍽️ מסעדה לערב הראשון</span></span></label></li>
         </ul>
@@ -610,7 +600,7 @@
         <h3>יום בפריז</h3>
         <p class="sub">יום מלא בעיר לפני היציאה לבורגונדי — סיור קולינרי במארה בבוקר, ובערב הבר המגניב.</p>
         <ul class="tasks">
-          <li><label><input type="checkbox" id="t-0906-tour-find" checked /><span><button type="button" class="tour-link" data-tour-open>🍽️ ביסים מתוקים · סיור מתוקים במארה · 10:00</button></span></label></li>
+          <li><label><input type="checkbox" id="t-0906-tour-find" checked /><span><button type="button" class="tour-link" data-pop="tour-overlay">🍽️ ביסים מתוקים · סיור מתוקים במארה · 10:00</button></span></label></li>
           <li><label><input type="checkbox" id="t-0906-bar-find" /><span><span class="hint">🍸 בר קוקטיילים</span></span></label></li>
         </ul>
       </div>
@@ -929,38 +919,6 @@
           <a href="https://www.youtube.com/results?search_query=Lyon+France" target="_blank" rel="noopener">▶ יוטיוב</a>
         </div>
       </div>
-      <div class="place">
-        <div class="meta"><span class="num">04</span><span class="drive">🚗 כ-10 דק׳</span></div>
-        <span class="nm">🍽️ מסעדה ב-Nolay</span>
-        <span class="desc">מסעדה נחמדה בעיירה הקרובה ביותר לווילה — אופציה קלה לערב בלי נסיעה ארוכה.</span>
-        <div class="links">
-          <a href="https://www.google.com/maps/search/?api=1&query=restaurants+Nolay+France" target="_blank" rel="noopener">📍 מפות</a>
-        </div>
-      </div>
-      <div class="place">
-        <div class="meta"><span class="num">05</span><span class="drive">🚗 כ-25 דק׳</span></div>
-        <span class="nm">🍽️ שתי מסעדות ב-Arnay-le-Duc</span>
-        <span class="desc">שתי מסעדות מעולות — ביקרנו בכל אחת מהן כבר כמה פעמים, וכל פעם היה מעולה.</span>
-        <div class="links">
-          <a href="https://www.google.com/maps/search/?api=1&query=restaurants+Arnay-le-Duc+France" target="_blank" rel="noopener">📍 מפות</a>
-        </div>
-      </div>
-      <div class="place">
-        <div class="meta"><span class="num">06</span><span class="drive">🚗 כ-30 דק׳</span></div>
-        <span class="nm">🍽️ מסעדת מישלן ב-Chagny</span>
-        <span class="desc">מסעדת מישלן בעיירה Chagny — לערב חגיגי במיוחד.</span>
-        <div class="links">
-          <a href="https://www.google.com/maps/search/?api=1&query=restaurant+Michelin+Chagny+France" target="_blank" rel="noopener">📍 מפות</a>
-        </div>
-      </div>
-      <div class="place">
-        <div class="meta"><span class="num">07</span><span class="drive">🚗 כ-35 דק׳</span></div>
-        <span class="nm">🍽️ מסעדות ב-Beaune</span>
-        <span class="desc">שפע מסעדות בעיר היין של בורגונדי — כולל מסעדות מישלן. משתלב מצוין עם יום הסיור ב-Beaune.</span>
-        <div class="links">
-          <a href="https://www.google.com/maps/search/?api=1&query=restaurants+Beaune+France" target="_blank" rel="noopener">📍 מפות</a>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -980,6 +938,35 @@
         <p>אי אפשר לדבר על פריז בלי לדבר על קולינריה! בסיור המתוקים במארה נטעם מהקינוחים של הפטיסיירים המובילים בצרפת — כאלה שנחשבים לטובים ביותר בתחומם. ניכנס לפטיסרי עטורי פרסים ונטעם את הקינוחים הכי טובים בעיר — מקרונים מיוחדים, שוקולדים משובחים, קרואסונים חמאתיים ועוד הפתעות מתוקות שיגרמו לכם להודות לעצמכם שסגרתם טיול לפריז.</p>
         <p>אבל הקסם האמיתי הוא לא רק בטעמים. זה בסיפורים. נגלה איך כל מאפה הוא חלק מההיסטוריה, נשמע איך הפטיסיירים הגדולים בצרפת הפכו את התשוקה לאפייה לאומנות, נבין למה הקינוחים פה הם באמת הכי טובים בעולם, איך בוחרים את הפטיסרי הכי טוב ואיך הקינוחים האלה הפכו לבלתי נפרדים מחיי היומיום של הפריזאיים.</p>
         <p class="tour-meta">🕑 משך הסיור: כשלוש שעות</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- חלונית התוכנית ליום הראשון -->
+  <div class="cl-overlay" id="day1-overlay" role="dialog" aria-modal="true" aria-labelledby="day1-title">
+    <div class="cl-panel">
+      <div class="cl-head">
+        <div class="row">
+          <div>
+            <p class="eyebrow">4 בספט׳ · יום שישי</p>
+            <h2 id="day1-title">🛬 יום ראשון — יום הנחיתה</h2>
+          </div>
+          <button type="button" class="cl-close" id="day1-close" aria-label="סגירה">✕</button>
+        </div>
+      </div>
+      <div class="cl-body tour-body">
+        <ul class="sched">
+          <li><span class="tm">09:30</span><span>נוחתים ב-CDG</span></li>
+          <li><span class="tm">~11:30</span><span>מגיעים לסן ז׳רמן, משאירים חפצים</span></li>
+          <li><span class="tm">12:30</span><span>ארוחת צהריים באזור (ברסרי מקומית)</span></li>
+          <li><span class="tm">14:00</span><span>גני טיולרי — הליכה ומנוחה</span></li>
+          <li><span class="tm">15:15</span><span>המארה — שיטוט ברחובות וחנויות</span></li>
+          <li><span class="tm">16:45</span><span>יורדים לאי סיטה, עוצרים בנוטרדאם</span></li>
+          <li><span class="tm">17:45</span><span>חוזרים דרך גני לוקסמבורג (שקיעה יפה)</span></li>
+          <li><span class="tm">19:00</span><span>חזרה למלון, מקלחת ומנוחה</span></li>
+          <li><span class="tm">20:30</span><span>יוצאים לארוחת ערב 🍷</span></li>
+        </ul>
+        <p class="tour-meta">בהצלחה ותיהנו! אם מישהו נשבר בדרך — תמיד אפשר לוותר על נוטרדאם/סיטה ולחזור ישר ללוקסמבורג 😊</p>
       </div>
     </div>
   </div>
@@ -1024,7 +1011,7 @@
         <div class="cl-group">
           <h3>6 בספט׳ · ראשון — פריז</h3>
           <ul class="cl-list">
-            <li><label><input type="checkbox" data-mirror="t-0906-tour-find" checked /><span class="it"><button type="button" class="tour-link t" data-tour-open>🍽️ ביסים מתוקים · סיור מתוקים במארה</button><span class="d">הוזמן ✓ · 6/9 בשעה 10:00 · לחצו לפרטים</span></span></label></li>
+            <li><label><input type="checkbox" data-mirror="t-0906-tour-find" checked /><span class="it"><button type="button" class="tour-link t" data-pop="tour-overlay">🍽️ ביסים מתוקים · סיור מתוקים במארה</button><span class="d">הוזמן ✓ · 6/9 בשעה 10:00 · לחצו לפרטים</span></span></label></li>
             <li><label><input type="checkbox" data-mirror="t-0906-bar-find" /><span class="it"><span class="t">🍸 בר קוקטיילים</span></span></label></li>
           </ul>
         </div>
@@ -1218,26 +1205,36 @@
   if (closeBtn) closeBtn.addEventListener("click", closeCl);
   if (overlay) overlay.addEventListener("click", function (e) { if (e.target === overlay) closeCl(); });
 
-  /* ---- חלונית פרטי הסיור הקולינרי ---- */
-  var tourOverlay = document.getElementById("tour-overlay");
-  function openTour() { if (tourOverlay) { tourOverlay.classList.add("open"); document.body.style.overflow = "hidden"; } }
-  function closeTour() {
-    if (!tourOverlay) return;
-    tourOverlay.classList.remove("open");
-    if (!overlay || !overlay.classList.contains("open")) document.body.style.overflow = "";
+  /* ---- חלוניות מידע צפות (סיור, לו"ז יום הנחיתה) ---- */
+  var popIds = ["tour-overlay", "day1-overlay"];
+  function closePop(ov) {
+    ov.classList.remove("open");
+    if (!document.querySelector(".cl-overlay.open")) document.body.style.overflow = "";
   }
-  document.querySelectorAll("[data-tour-open]").forEach(function (b) {
-    b.addEventListener("click", function (e) { e.preventDefault(); e.stopPropagation(); openTour(); });
+  document.querySelectorAll("[data-pop]").forEach(function (b) {
+    b.addEventListener("click", function (e) {
+      e.preventDefault(); e.stopPropagation();
+      var ov = document.getElementById(b.getAttribute("data-pop"));
+      if (ov) { ov.classList.add("open"); document.body.style.overflow = "hidden"; }
+    });
   });
-  var tourClose = document.getElementById("tour-close");
-  if (tourClose) tourClose.addEventListener("click", closeTour);
-  if (tourOverlay) tourOverlay.addEventListener("click", function (e) { if (e.target === tourOverlay) closeTour(); });
+  popIds.forEach(function (id) {
+    var ov = document.getElementById(id);
+    if (!ov) return;
+    var x = ov.querySelector(".cl-close");
+    if (x) x.addEventListener("click", function () { closePop(ov); });
+    ov.addEventListener("click", function (e) { if (e.target === ov) closePop(ov); });
+  });
 
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") {
-      if (tourOverlay && tourOverlay.classList.contains("open")) closeTour();
-      else closeCl();
-    }
+    if (e.key !== "Escape") return;
+    var openPop = null;
+    popIds.forEach(function (id) {
+      var ov = document.getElementById(id);
+      if (ov && ov.classList.contains("open")) openPop = ov;
+    });
+    if (openPop) closePop(openPop);
+    else closeCl();
   });
 
   if (fab) {
