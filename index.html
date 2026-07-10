@@ -478,6 +478,32 @@
   .cl-list .it .d { font-family: var(--font-display); font-size: 11.5px; color: var(--muted); }
   .cl-list input:checked ~ .it .t { text-decoration: line-through; color: var(--muted); }
 
+  /* לו"ז יומי */
+  .sched { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+  .sched li { display: flex; gap: 10px; align-items: baseline; font-size: 14.5px; line-height: 1.5; }
+  .sched .tm { font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: var(--accent); flex: 0 0 48px; }
+  .sched-note { font-size: 13px; color: var(--muted); margin: 12px 0 0; line-height: 1.6; }
+
+  /* קישור לפרטי הסיור */
+  .tour-link {
+    background: none; border: none; padding: 0; margin: 0;
+    font: inherit; color: var(--accent); font-weight: 700;
+    cursor: pointer; text-align: start;
+    text-decoration: underline dotted; text-underline-offset: 3px;
+    transition: color 0.12s ease;
+  }
+  .tour-link:hover { color: var(--accent-2); }
+  .tour-link:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 2px; border-radius: 4px; }
+
+  /* גוף חלונית הסיור */
+  .tour-body { padding-top: 20px; }
+  .tour-body p { margin: 0 0 14px; font-size: 15px; line-height: 1.75; }
+  .tour-body .tour-meta {
+    font-family: var(--font-display); font-weight: 700;
+    color: var(--muted); border-top: 1px solid var(--line);
+    padding-top: 14px; margin-bottom: 0;
+  }
+
   @media (max-width: 720px) {
     .cl-overlay { padding: 20px 12px; }
     .cl-head h2 { font-size: 21px; }
@@ -530,7 +556,7 @@
       <div class="card">
         <p class="day"><span>4 בספט׳</span><span class="dow">יום שישי</span></p>
         <h3>קבוצת הציונים נוחתת בפריז</h3>
-        <p class="sub">קבוצת הציונים נוחתת ראשונה ופותחת את הטיול — שלושה לילות בפריז לפני שיוצאים דרומה לבורגונדי.</p>
+        <p class="sub">יום הנחיתה — סן ז׳רמן, גני טיולרי, המארה, נוטרדאם וגני לוקסמבורג, ובערב ארוחה ראשונה בעיר.</p>
         <div class="flight">
           <span class="code">אל על · LY319 · קבוצת הציונים</span>
           <span class="pt"><span class="ap">TLV</span><span class="tm">05:50</span><span class="dt">בן גוריון · T3</span></span>
@@ -538,9 +564,20 @@
           <span class="pt"><span class="ap">CDG</span><span class="tm">09:40</span><span class="dt">פריז · T2B</span></span>
         </div>
         <div class="addr">🏨 <a href="https://he.airbnb.com/rooms/1287438598279697757" target="_blank" rel="noopener">מקום הלינה בפריז — Airbnb ↗</a><br />📍 <a class="street" href="https://www.google.com/maps/search/?api=1&query=154+Bd+Saint-Germain%2C+75005+Paris%2C+France" target="_blank" rel="noopener" dir="ltr">154 Bd Saint-Germain, 75005 Paris ↗</a></div>
+        <ul class="sched">
+          <li><span class="tm">09:30</span><span>נוחתים ב-CDG</span></li>
+          <li><span class="tm">~11:30</span><span>מגיעים לסן ז׳רמן, משאירים חפצים</span></li>
+          <li><span class="tm">12:30</span><span>ארוחת צהריים באזור (ברסרי מקומית)</span></li>
+          <li><span class="tm">14:00</span><span>גני טיולרי — הליכה ומנוחה</span></li>
+          <li><span class="tm">15:15</span><span>המארה — שיטוט ברחובות וחנויות</span></li>
+          <li><span class="tm">16:45</span><span>יורדים לאי סיטה, עוצרים בנוטרדאם</span></li>
+          <li><span class="tm">17:45</span><span>חוזרים דרך גני לוקסמבורג (שקיעה יפה)</span></li>
+          <li><span class="tm">19:00</span><span>חזרה למלון, מקלחת ומנוחה</span></li>
+          <li><span class="tm">20:30</span><span>יוצאים לארוחת ערב 🍷</span></li>
+        </ul>
+        <p class="sched-note">בהצלחה ותיהנו! אם מישהו נשבר בדרך — תמיד אפשר לוותר על נוטרדאם/סיטה ולחזור ישר ללוקסמבורג 😊</p>
         <ul class="tasks">
-          <li><label><input type="checkbox" id="t-0904-cruise-find" /><span><span class="hint">🚤 שיט / שיטוט בעיר</span></span></label></li>
-          <li><label><input type="checkbox" id="t-0904-rest-find" /><span><span class="hint">מסעדה לערב הראשון</span> — או ארוחת ערב על שיט בסן</span></label></li>
+          <li><label><input type="checkbox" id="t-0904-rest-find" /><span><span class="hint">🍽️ מסעדה לערב הראשון</span></span></label></li>
         </ul>
       </div>
       <div class="node" data-icon="✈"></div>
@@ -571,10 +608,9 @@
       <div class="card">
         <p class="day"><span>6 בספט׳</span><span class="dow">יום ראשון</span></p>
         <h3>יום בפריז</h3>
-        <p class="sub">יום מלא בעיר לפני היציאה לבורגונדי — שוק בבוקר, סיור אוכל, ובערב הבר המגניב.</p>
+        <p class="sub">יום מלא בעיר לפני היציאה לבורגונדי — סיור קולינרי במארה בבוקר, ובערב הבר המגניב.</p>
         <ul class="tasks">
-          <li><label><input type="checkbox" id="t-0906-market-find" /><span><span class="hint">🧺 שוק לבוקר ראשון</span></span></label></li>
-          <li><label><input type="checkbox" id="t-0906-tour-find" /><span><span class="hint">🍽️ סיור אוכל</span></span></label></li>
+          <li><label><input type="checkbox" id="t-0906-tour-find" checked /><span><button type="button" class="tour-link" data-tour-open>🍽️ ביסים מתוקים · סיור מתוקים במארה · 10:00</button></span></label></li>
           <li><label><input type="checkbox" id="t-0906-bar-find" /><span><span class="hint">🍸 בר קוקטיילים</span></span></label></li>
         </ul>
       </div>
@@ -596,7 +632,7 @@
           📍 <a class="street" href="https://maps.google.com/?q=11+Route+de+Bouton%2C+71360+Saint-L%C3%A9ger-du-Bois%2C+France&ftid=0x47f2418e09e820ef:0x6df53d6575e9eae0" target="_blank" rel="noopener" dir="ltr">11 Route de Bouton, 71360 Saint-Léger-du-Bois</a>
         </div>
         <ul class="tasks">
-          <li><label><input type="checkbox" id="t-0907-1" /><span><span class="hint">להזמין את שתי המכוניות השכורות</span></span></label></li>
+          <li><label><input type="checkbox" id="t-0907-1" checked /><span><span class="hint">להזמין את שתי המכוניות השכורות · Renault Symbioz</span></span></label></li>
         </ul>
         <span class="tag blue">2 מכוניות</span>
       </div>
@@ -707,7 +743,7 @@
 
   <section class="wrap places" id="paris-food">
     <div class="head reveal">
-      <h2>קולינריה ב<span class="accent">פריז</span></h2>
+      <h2>המלצות ב<span class="accent">פריז</span></h2>
       <p class="note">מנות ומקומות שאסור לפספס בפריז.</p>
     </div>
     <div class="grid reveal">
@@ -729,12 +765,138 @@
           <a href="https://www.youtube.com/results?search_query=Shana+Assaf+Granit+Paris" target="_blank" rel="noopener">▶ יוטיוב</a>
         </div>
       </div>
+      <div class="place">
+        <div class="meta"><span class="num">03</span><span class="drive">🧺 שוק מקורה</span></div>
+        <span class="nm">Marché des Enfants Rouges</span>
+        <span class="desc">השוק המקורה העתיק בפריז (משנת 1615), בלב המארה — דוכני אוכל מכל העולם, פרחים ותוצרת טרייה. סגור בימי שני.</span>
+        <div class="links">
+          <a href="https://www.google.com/maps/search/?api=1&query=March%C3%A9+des+Enfants+Rouges+Paris" target="_blank" rel="noopener">📍 מפות</a>
+          <a href="https://www.youtube.com/results?search_query=March%C3%A9+des+Enfants+Rouges+Paris" target="_blank" rel="noopener">▶ יוטיוב</a>
+        </div>
+      </div>
+      <div class="place">
+        <div class="meta"><span class="num">04</span><span class="drive">🥞 קרפרי</span></div>
+        <span class="nm">LULU Crêperie</span>
+        <span class="desc">דוכן קרפים וגלטים ברטוניים בתוך שוק אנפן רוז׳ — גלטים ענקיים מקמח כוסמת אורגני טחון באבן. להיט ויראלי שמכונה "הקרפ הכי גדול בפריז".</span>
+        <div class="links">
+          <a href="https://www.google.com/maps/search/?api=1&query=Lulu+Creperie+March%C3%A9+des+Enfants+Rouges+Paris" target="_blank" rel="noopener">📍 מפות</a>
+          <a href="https://www.instagram.com/lulu.creperie/" target="_blank" rel="noopener">📸 אינסטגרם</a>
+        </div>
+      </div>
+      <div class="place">
+        <div class="meta"><span class="num">05</span><span class="drive">🍔 המבורגר חוותי</span></div>
+        <span class="nm">Le Burger Fermier des Enfants Rouges</span>
+        <span class="desc">דוכן המבורגרים בתוך השוק שכל חומרי הגלם שלו מגיעים מחוות קטנות — בקר אנגוס, גבינת טום מיושנת בסיידר, ולחם שנאפה במקום מדי בוקר.</span>
+        <div class="links">
+          <a href="https://www.google.com/maps/search/?api=1&query=Le+Burger+Fermier+des+Enfants+Rouges+Paris" target="_blank" rel="noopener">📍 מפות</a>
+          <a href="https://www.leburgerfermier.fr/" target="_blank" rel="noopener">🔗 אתר רשמי</a>
+        </div>
+      </div>
+      <div class="place">
+        <div class="meta"><span class="num">06</span><span class="drive">🥪 כריכים</span></div>
+        <span class="nm">Chez Alain Miam Miam</span>
+        <span class="desc">הכריך שנחשב לרבים הטוב בפריז — כריכי XXL קלויים על לחם אורגני עם קונטה, בצל צלוי ואבוקדו, ממש ליד שוק אנפן רוז׳. צפו לתור.</span>
+        <div class="links">
+          <a href="https://www.google.com/maps/search/?api=1&query=Chez+Alain+Miam+Miam+Paris" target="_blank" rel="noopener">📍 מפות</a>
+          <a href="https://chezalainmiammiam.com/" target="_blank" rel="noopener">🔗 אתר רשמי</a>
+        </div>
+      </div>
+      <div class="place">
+        <div class="meta"><span class="num">07</span><span class="drive">🫒 ביסטרו פרובנסאלי</span></div>
+        <span class="nm">Chez Janou</span>
+        <span class="desc">ביסטרו פרובנסאלי תוסס צמוד לכיכר הווז׳ — מפורסם במוס השוקולד ללא הגבלה שמוגש מקערה ענקית, וביותר מ-80 סוגי פסטיס.</span>
+        <div class="links">
+          <a href="https://www.google.com/maps/search/?api=1&query=Chez+Janou+Paris" target="_blank" rel="noopener">📍 מפות</a>
+          <a href="https://www.chezjanou.com/" target="_blank" rel="noopener">🔗 אתר רשמי</a>
+        </div>
+      </div>
+      <div class="place">
+        <div class="meta"><span class="num">08</span><span class="drive">⭐ מישלן · אסף גרניט</span></div>
+        <span class="nm">Shabour</span>
+        <span class="desc">מסעדת הדגל של אסף גרניט בפריז, עטורת כוכב מישלן — ישיבה סביב דלפק מול המטבח הפתוח ותפריט טעימות בהשראת ירושלים. חובה להזמין הרבה מראש.</span>
+        <div class="links">
+          <a href="https://www.google.com/maps/search/?api=1&query=Restaurant+Shabour+Paris" target="_blank" rel="noopener">📍 מפות</a>
+          <a href="https://www.restaurantshabour.com/" target="_blank" rel="noopener">🔗 אתר רשמי</a>
+        </div>
+      </div>
+      <div class="place">
+        <div class="meta"><span class="num">09</span><span class="drive">🥩 סטייק-פריט</span></div>
+        <span class="nm">L'Atelier Entrecôte &amp; Volaille</span>
+        <span class="desc">תפריט אחד קבוע — סלט ירוק ואז אנטריקוט או עוף Label Rouge עם צ׳יפס ביתי ורוטב ירוק סודי. כמה סניפים בעיר.</span>
+        <div class="links">
+          <a href="https://www.google.com/maps/search/?api=1&query=L%27Atelier+Entrec%C3%B4te+%26+Volaille+Paris" target="_blank" rel="noopener">📍 מפות</a>
+          <a href="https://www.instagram.com/latelierentrecoteetvolaille/" target="_blank" rel="noopener">📸 אינסטגרם</a>
+        </div>
+      </div>
+      <div class="place">
+        <div class="meta"><span class="num">10</span><span class="drive">🥩 סטייק-פריט</span></div>
+        <span class="nm">Le Relais de l'Entrecôte</span>
+        <span class="desc">מוסד פריזאי שמגיש מנה אחת בלבד — סטייק-פריט ברוטב החמאה הסודי המפורסם, בשני סבבים עם צ׳יפס ללא הגבלה. בלי הזמנה מראש — פשוט מגיעים.</span>
+        <div class="links">
+          <a href="https://www.google.com/maps/search/?api=1&query=Le+Relais+de+l%27Entrec%C3%B4te+Paris" target="_blank" rel="noopener">📍 מפות</a>
+          <a href="https://www.relaisdelentrecote.com/" target="_blank" rel="noopener">🔗 אתר רשמי</a>
+        </div>
+      </div>
+      <div class="place">
+        <div class="meta"><span class="num">11</span><span class="drive">🧁 מקרונים</span></div>
+        <span class="nm">Pierre Hermé</span>
+        <span class="desc">"הפיקאסו של הקונדיטוריה" — מהמקרונים המפורסמים בעולם, כולל טעם הדגל איספהאן (ורד, פטל וליצ׳י). בוטיקים בכל רחבי העיר.</span>
+        <div class="links">
+          <a href="https://www.google.com/maps/search/?api=1&query=Pierre+Herm%C3%A9+Paris" target="_blank" rel="noopener">📍 מפות</a>
+          <a href="https://www.pierreherme.com/" target="_blank" rel="noopener">🔗 אתר רשמי</a>
+        </div>
+      </div>
+      <div class="place">
+        <div class="meta"><span class="num">12</span><span class="drive">🍫 שוקולד</span></div>
+        <span class="nm">Cédric et la Chocolaterie</span>
+        <span class="desc">חנות השוקולד של כוכב הקונדיטוריה סדריק גרולה, בהשראת וילי וונקה — קיר מפל שוקולד, בונבונים, טבלאות וממרחים. שדרות האופרה.</span>
+        <div class="links">
+          <a href="https://www.google.com/maps/search/?api=1&query=C%C3%A9dric+et+la+Chocolaterie+Paris" target="_blank" rel="noopener">📍 מפות</a>
+          <a href="https://www.cedric-et-la-chocolaterie.com/" target="_blank" rel="noopener">🔗 אתר רשמי</a>
+        </div>
+      </div>
+      <div class="place">
+        <div class="meta"><span class="num">13</span><span class="drive">🥐 מאפייה</span></div>
+        <span class="nm">The French Bastards</span>
+        <span class="desc">מאפייה צעירה ולוהטת — באבקת שוקולד לפי מתכון של סבתא, קראפינים וסן-הונורה עונתי. כמה סניפים ברחבי העיר.</span>
+        <div class="links">
+          <a href="https://www.google.com/maps/search/?api=1&query=The+French+Bastards+Paris" target="_blank" rel="noopener">📍 מפות</a>
+          <a href="https://thefrenchbastards.fr/" target="_blank" rel="noopener">🔗 אתר רשמי</a>
+        </div>
+      </div>
+      <div class="place">
+        <div class="meta"><span class="num">14</span><span class="drive">🥐 מאפייה</span></div>
+        <span class="nm">Boulangerie du Sentier</span>
+        <span class="desc">מאפייה בהשפעה ישראלית ברובע סנטייה — באבקות, חלות ובייגל ירושלמי, וזוכת התואר "הקרואסון הטוב בפריז 2026".</span>
+        <div class="links">
+          <a href="https://www.google.com/maps/search/?api=1&query=Boulangerie+du+Sentier+Paris" target="_blank" rel="noopener">📍 מפות</a>
+          <a href="https://www.instagram.com/boulangeriedusentier/" target="_blank" rel="noopener">📸 אינסטגרם</a>
+        </div>
+      </div>
+      <div class="place">
+        <div class="meta"><span class="num">15</span><span class="drive">🍦 ג׳לטו</span></div>
+        <span class="nm">Pedone · Gelati dal 1959</span>
+        <span class="desc">בית ג׳לטו איטלקי משנת 1959 — פיסטוק סיציליאני, אגוזי לוז מפיימונטה וגביעים שנאפים במקום מול העיניים. הבוטיק ברובע ה-1, ליד פאלה רויאל.</span>
+        <div class="links">
+          <a href="https://www.google.com/maps/search/?api=1&query=Pedone+Glacier+Paris" target="_blank" rel="noopener">📍 מפות</a>
+          <a href="https://www.pedone-glacier.com/" target="_blank" rel="noopener">🔗 אתר רשמי</a>
+        </div>
+      </div>
+      <div class="place">
+        <div class="meta"><span class="num">16</span><span class="drive">🍦 גלידה לבנונית</span></div>
+        <span class="nm">Glace Bachir</span>
+        <span class="desc">גלידריה לבנונית משפחתית מאז שנות ה-30 — גלידת אשתא עם מי פריחת הדרים, מגולגלת בפיסטוקים כתושים עם קצפת. סניפים במארה ובמונמארטר.</span>
+        <div class="links">
+          <a href="https://www.google.com/maps/search/?api=1&query=Glace+Bachir+Paris" target="_blank" rel="noopener">📍 מפות</a>
+          <a href="https://bachir.fr/" target="_blank" rel="noopener">🔗 אתר רשמי</a>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="wrap places" id="places">
     <div class="head reveal">
-      <h2>אפשרויות נוספות באזור <span class="accent">הווילה</span></h2>
+      <h2>המלצות באזור <span class="accent">הווילה</span></h2>
       <p class="note">מבחר אתרים מומלצים באזור הווילה, עם זמן נסיעה משוער מהווילה, קישור לאתר הרשמי (כשיש) וחיפוש יוטיוב להתרשמות. שלחו לי את השמות מהקישורים ששלחתם ואחליף בהתאם, ונצמיד מקומות לימים.</p>
     </div>
     <div class="grid reveal">
@@ -767,8 +929,60 @@
           <a href="https://www.youtube.com/results?search_query=Lyon+France" target="_blank" rel="noopener">▶ יוטיוב</a>
         </div>
       </div>
+      <div class="place">
+        <div class="meta"><span class="num">04</span><span class="drive">🚗 כ-10 דק׳</span></div>
+        <span class="nm">🍽️ מסעדה ב-Nolay</span>
+        <span class="desc">מסעדה נחמדה בעיירה הקרובה ביותר לווילה — אופציה קלה לערב בלי נסיעה ארוכה.</span>
+        <div class="links">
+          <a href="https://www.google.com/maps/search/?api=1&query=restaurants+Nolay+France" target="_blank" rel="noopener">📍 מפות</a>
+        </div>
+      </div>
+      <div class="place">
+        <div class="meta"><span class="num">05</span><span class="drive">🚗 כ-25 דק׳</span></div>
+        <span class="nm">🍽️ שתי מסעדות ב-Arnay-le-Duc</span>
+        <span class="desc">שתי מסעדות מעולות — ביקרנו בכל אחת מהן כבר כמה פעמים, וכל פעם היה מעולה.</span>
+        <div class="links">
+          <a href="https://www.google.com/maps/search/?api=1&query=restaurants+Arnay-le-Duc+France" target="_blank" rel="noopener">📍 מפות</a>
+        </div>
+      </div>
+      <div class="place">
+        <div class="meta"><span class="num">06</span><span class="drive">🚗 כ-30 דק׳</span></div>
+        <span class="nm">🍽️ מסעדת מישלן ב-Chagny</span>
+        <span class="desc">מסעדת מישלן בעיירה Chagny — לערב חגיגי במיוחד.</span>
+        <div class="links">
+          <a href="https://www.google.com/maps/search/?api=1&query=restaurant+Michelin+Chagny+France" target="_blank" rel="noopener">📍 מפות</a>
+        </div>
+      </div>
+      <div class="place">
+        <div class="meta"><span class="num">07</span><span class="drive">🚗 כ-35 דק׳</span></div>
+        <span class="nm">🍽️ מסעדות ב-Beaune</span>
+        <span class="desc">שפע מסעדות בעיר היין של בורגונדי — כולל מסעדות מישלן. משתלב מצוין עם יום הסיור ב-Beaune.</span>
+        <div class="links">
+          <a href="https://www.google.com/maps/search/?api=1&query=restaurants+Beaune+France" target="_blank" rel="noopener">📍 מפות</a>
+        </div>
+      </div>
     </div>
   </section>
+
+  <!-- חלונית פרטי הסיור הקולינרי -->
+  <div class="cl-overlay" id="tour-overlay" role="dialog" aria-modal="true" aria-labelledby="tour-title">
+    <div class="cl-panel">
+      <div class="cl-head">
+        <div class="row">
+          <div>
+            <p class="eyebrow">6 בספט׳ · 10:00 · המארה</p>
+            <h2 id="tour-title">ביסים מתוקים · סיור מתוקים במארה</h2>
+          </div>
+          <button type="button" class="cl-close" id="tour-close" aria-label="סגירה">✕</button>
+        </div>
+      </div>
+      <div class="cl-body tour-body">
+        <p>אי אפשר לדבר על פריז בלי לדבר על קולינריה! בסיור המתוקים במארה נטעם מהקינוחים של הפטיסיירים המובילים בצרפת — כאלה שנחשבים לטובים ביותר בתחומם. ניכנס לפטיסרי עטורי פרסים ונטעם את הקינוחים הכי טובים בעיר — מקרונים מיוחדים, שוקולדים משובחים, קרואסונים חמאתיים ועוד הפתעות מתוקות שיגרמו לכם להודות לעצמכם שסגרתם טיול לפריז.</p>
+        <p>אבל הקסם האמיתי הוא לא רק בטעמים. זה בסיפורים. נגלה איך כל מאפה הוא חלק מההיסטוריה, נשמע איך הפטיסיירים הגדולים בצרפת הפכו את התשוקה לאפייה לאומנות, נבין למה הקינוחים פה הם באמת הכי טובים בעולם, איך בוחרים את הפטיסרי הכי טוב ואיך הקינוחים האלה הפכו לבלתי נפרדים מחיי היומיום של הפריזאיים.</p>
+        <p class="tour-meta">🕑 משך הסיור: כשלוש שעות</p>
+      </div>
+    </div>
+  </div>
 
   <!-- כפתור צף לצ'ק ליסט -->
   <button type="button" class="checklist-fab" id="cl-fab">📋 צ׳ק ליסט <span class="cl-count" id="cl-count-fab">0/0</span></button>
@@ -795,8 +1009,7 @@
           <h3>4 בספט׳ · שישי — פריז</h3>
           <ul class="cl-list">
             <li><label><input type="checkbox" data-mirror="t-book-paris-1" checked /><span class="it"><span class="t">🏨 הזמנת מקום הלינה בפריז (לילות 1–3)</span><span class="d">הוזמן ✓</span></span></label></li>
-            <li><label><input type="checkbox" data-mirror="t-0904-cruise-find" /><span class="it"><span class="t">🚤 שיט / שיטוט בעיר</span></span></label></li>
-            <li><label><input type="checkbox" data-mirror="t-0904-rest-find" /><span class="it"><span class="t">🍽️ מסעדה לערב הראשון / ארוחה על שיט בסן</span></span></label></li>
+            <li><label><input type="checkbox" data-mirror="t-0904-rest-find" /><span class="it"><span class="t">🍽️ מסעדה לערב הראשון</span></span></label></li>
           </ul>
         </div>
 
@@ -811,8 +1024,7 @@
         <div class="cl-group">
           <h3>6 בספט׳ · ראשון — פריז</h3>
           <ul class="cl-list">
-            <li><label><input type="checkbox" data-mirror="t-0906-market-find" /><span class="it"><span class="t">🧺 שוק לבוקר ראשון</span></span></label></li>
-            <li><label><input type="checkbox" data-mirror="t-0906-tour-find" /><span class="it"><span class="t">🍽️ סיור אוכל</span></span></label></li>
+            <li><label><input type="checkbox" data-mirror="t-0906-tour-find" checked /><span class="it"><button type="button" class="tour-link t" data-tour-open>🍽️ ביסים מתוקים · סיור מתוקים במארה</button><span class="d">הוזמן ✓ · 6/9 בשעה 10:00 · לחצו לפרטים</span></span></label></li>
             <li><label><input type="checkbox" data-mirror="t-0906-bar-find" /><span class="it"><span class="t">🍸 בר קוקטיילים</span></span></label></li>
           </ul>
         </div>
@@ -820,7 +1032,7 @@
         <div class="cl-group">
           <h3>7 בספט׳ · שני — נסיעה לווילה</h3>
           <ul class="cl-list">
-            <li><label><input type="checkbox" data-mirror="t-0907-1" /><span class="it"><span class="t">🚗 להזמין את שתי המכוניות השכורות</span><span class="d">איסוף בפריז</span></span></label></li>
+            <li><label><input type="checkbox" data-mirror="t-0907-1" checked /><span class="it"><span class="t">🚗 להזמין את שתי המכוניות השכורות</span><span class="d">הוזמן ✓ · Renault Symbioz · איסוף בפריז</span></span></label></li>
           </ul>
         </div>
 
@@ -851,7 +1063,7 @@
   </div>
 
   <footer>
-    <p class="sig">להתראות בקרוב</p>
+    <p class="sig">להתראות בקרוב!</p>
   </footer>
 
 <script>
@@ -1005,7 +1217,28 @@
   var closeBtn = document.getElementById("cl-close");
   if (closeBtn) closeBtn.addEventListener("click", closeCl);
   if (overlay) overlay.addEventListener("click", function (e) { if (e.target === overlay) closeCl(); });
-  document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeCl(); });
+
+  /* ---- חלונית פרטי הסיור הקולינרי ---- */
+  var tourOverlay = document.getElementById("tour-overlay");
+  function openTour() { if (tourOverlay) { tourOverlay.classList.add("open"); document.body.style.overflow = "hidden"; } }
+  function closeTour() {
+    if (!tourOverlay) return;
+    tourOverlay.classList.remove("open");
+    if (!overlay || !overlay.classList.contains("open")) document.body.style.overflow = "";
+  }
+  document.querySelectorAll("[data-tour-open]").forEach(function (b) {
+    b.addEventListener("click", function (e) { e.preventDefault(); e.stopPropagation(); openTour(); });
+  });
+  var tourClose = document.getElementById("tour-close");
+  if (tourClose) tourClose.addEventListener("click", closeTour);
+  if (tourOverlay) tourOverlay.addEventListener("click", function (e) { if (e.target === tourOverlay) closeTour(); });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      if (tourOverlay && tourOverlay.classList.contains("open")) closeTour();
+      else closeCl();
+    }
+  });
 
   if (fab) {
     window.addEventListener("scroll", function () {
