@@ -243,7 +243,7 @@
     display: grid; place-items: center;
   }
   .tasks input:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 2px; }
-  .tasks input:checked + span { text-decoration: line-through; color: var(--muted); }
+  .tasks input:checked + span { color: var(--muted); }
   .tasks .hint { color: var(--accent); font-weight: 700; }
 
   .tag {
@@ -476,7 +476,7 @@
   .cl-list .it { display: flex; flex-direction: column; gap: 2px; }
   .cl-list .it .t { font-size: 15.5px; line-height: 1.4; }
   .cl-list .it .d { font-family: var(--font-display); font-size: 11.5px; color: var(--muted); }
-  .cl-list input:checked ~ .it .t { text-decoration: line-through; color: var(--muted); }
+  .cl-list input:checked ~ .it .t { color: var(--muted); }
 
   /* לו"ז יומי */
   .sched { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
@@ -639,8 +639,7 @@
         <h3>Beaune + יום יין עצמאי</h3>
         <p class="sub">היום המרכזי. בוקר ב-Beaune — הוטל-דיה ושיטוט בעיר. צהריים בכפר יין, ואחר הצהריים טעימות עצמאיות: אחת "רצינית" שמוזמנת מראש, והשנייה ספונטנית בכפר.</p>
         <ul class="tasks">
-          <li><label><input type="checkbox" id="t-0908-1" /><span><span class="hint">סיור בעיר Beaune</span></span></label></li>
-          <li><label><input type="checkbox" id="t-0908-4" checked /><span><span class="hint">🍷 טעימות יין ב-Maison Joseph Drouhin</span> (<a href="https://www.drouhin.com" target="_blank" rel="noopener">להזמין ↗</a>)</span></label></li>
+          <li><label><input type="checkbox" id="t-0908-4" checked /><span><span class="hint">🍷 סיור בעיר בון עם היקב</span> (<a href="https://www.drouhin.com" target="_blank" rel="noopener">Maison Joseph Drouhin ↗</a>)</span></label></li>
         </ul>
         <span class="tag wine">🍷 יום יין עצמאי</span>
         <span class="tag blue">🚗 Beaune · כ-45 דק׳</span>
@@ -675,7 +674,7 @@
         <h3>יום פנוי · ערב ראש השנה</h3>
         <p class="sub">עדיין לא נקבע — נשלים בהמשך.</p>
         <ul class="tasks">
-          <li><label><input type="checkbox" id="t-0911-1" /><span><span class="hint">ארוחת ערב חג באזור</span></span></label></li>
+          <li><label><input type="checkbox" id="t-0911-1" /><span><span class="hint">ארוחת ערב חג ראש השנה</span></span></label></li>
         </ul>
       </div>
       <div class="node"></div>
@@ -702,7 +701,7 @@
         <h3>חזרה לפריז · הלילה האחרון</h3>
         <p class="sub">נוסעים בבוקר, מחזירים את המכוניות, ולנים לילה אחרון בפריז לפני הטיסה הביתה.</p>
         <ul class="tasks">
-          <li><label><input type="checkbox" id="t-0913-2" /><span>מסעדה לסיום הטיול</span></label></li>
+          <li><label><input type="checkbox" id="t-0913-2" /><span>מסעדה לערב האחרון של הטיול</span></label></li>
         </ul>
         <div class="addr">🏨 <a href="https://www.booking.com/Share-5i20Fz" target="_blank" rel="noopener">המלון בפריז — Booking.com ↗</a><br />📍 <a class="street" href="https://www.google.com/maps/search/?api=1&query=42+Rue+des+Bernardins%2C+75005+Paris%2C+France" target="_blank" rel="noopener" dir="ltr">42 Rue des Bernardins, 75005 Paris ↗</a></div>
         <span class="tag wine">לילה 10 · פריז · הוזמן ✓</span>
@@ -730,6 +729,38 @@
           <span class="pt"><span class="ap">TLV</span><span class="tm">22:55</span><span class="dt">בן גוריון · T3</span></span>
         </div>
       </div>
+    </section>
+
+    <div class="chapter reveal"><span>אביה וטל · המשך לרגל יום הנישואים</span></div>
+
+    <!-- 14 בספטמבר — אביה וטל ממשיכים -->
+    <section class="stop left reveal">
+      <div class="card">
+        <p class="day"><span>14 בספט׳</span><span class="dow">יום שני</span></p>
+        <h3>אביה וטל — יום 1</h3>
+        <p class="sub">עדיין לא נקבע — נשלים בהמשך.</p>
+      </div>
+      <div class="node"></div>
+    </section>
+
+    <!-- 15 בספטמבר -->
+    <section class="stop right reveal">
+      <div class="node"></div>
+      <div class="card">
+        <p class="day"><span>15 בספט׳</span><span class="dow">יום שלישי</span></p>
+        <h3>אביה וטל — יום 2</h3>
+        <p class="sub">עדיין לא נקבע — נשלים בהמשך.</p>
+      </div>
+    </section>
+
+    <!-- 16 בספטמבר -->
+    <section class="stop left reveal">
+      <div class="card">
+        <p class="day"><span>16 בספט׳</span><span class="dow">יום רביעי</span></p>
+        <h3>אביה וטל — יום 3</h3>
+        <p class="sub">עדיין לא נקבע — נשלים בהמשך.</p>
+      </div>
+      <div class="node"></div>
     </section>
 
   </main>
@@ -1020,7 +1051,7 @@
           <li><span class="tm">19:15</span><span>🍽️ טל, רוני ואביה — ארוחת ערב ב-Shabour (שבור, מסעדת המישלן של אסף גרנית)</span></li>
           <li><span class="tm">19:15</span><span>👶 אסף וקרינה נפגשים עם דורון ואורית ("הפולנים") — עם בייביסיטר לנבו</span></li>
           <li><span class="tm">19:30</span><span>🚢 שיט על נהר הסן בשקיעה</span></li>
-          <li><span class="tm">21:00</span><span>🍽️ ערב — ארוחת ערב באזור סן ז׳רמן / אזור האייפל</span></li>
+          <li><span class="tm">21:00</span><span>🍽️ ערב — ארוחת ערב</span></li>
         </ul>
         <p class="tour-meta">היום שכולם יחד לראשונה — כדאי להזמין מראש כרטיסים למגדל ולשיט כדי לדלג על התורים. בשעה 19:15 חלק מהחבורה מתפצל: טל, רוני ואביה לארוחת ערב בשבור, ואסף וקרינה נפגשים עם דורון ואורית — שאר החבורה ממשיכה לשיט על הסן.</p>
       </div>
@@ -1111,14 +1142,14 @@
         <div class="cl-group">
           <h3>8 בספט׳ · שלישי — Beaune</h3>
           <ul class="cl-list">
-            <li><label><input type="checkbox" data-mirror="t-0908-4" checked /><span class="it"><span class="t">🍷 טעימות יין ב-Maison Joseph Drouhin</span><span class="d">הוזמן ✓</span></span></label></li>
+            <li><label><input type="checkbox" data-mirror="t-0908-4" checked /><span class="it"><span class="t">🍷 סיור בעיר בון עם היקב</span><span class="d">הוזמן ✓ · Maison Joseph Drouhin</span></span></label></li>
           </ul>
         </div>
 
         <div class="cl-group">
           <h3>11 בספט׳ · שישי · ערב ראש השנה 🍯</h3>
           <ul class="cl-list">
-            <li><label><input type="checkbox" data-mirror="t-0911-1" /><span class="it"><span class="t">🍯 ארוחת ערב חג באזור הווילה</span></span></label></li>
+            <li><label><input type="checkbox" data-mirror="t-0911-1" /><span class="it"><span class="t">🍯 ארוחת ערב חג ראש השנה</span></span></label></li>
           </ul>
         </div>
 
@@ -1126,7 +1157,7 @@
           <h3>13 בספט׳ · ראשון — פריז</h3>
           <ul class="cl-list">
             <li><label><input type="checkbox" data-mirror="t-book-paris-2" checked /><span class="it"><span class="t">🏨 הזמנת המלון בפריז (לילה 10)</span><span class="d">הוזמן ✓</span></span></label></li>
-            <li><label><input type="checkbox" data-mirror="t-0913-2" /><span class="it"><span class="t">🍽️ מסעדה לסיום הטיול</span></span></label></li>
+            <li><label><input type="checkbox" data-mirror="t-0913-2" /><span class="it"><span class="t">🍽️ מסעדה לערב האחרון של הטיול</span></span></label></li>
           </ul>
         </div>
 
